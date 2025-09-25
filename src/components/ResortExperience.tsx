@@ -29,6 +29,18 @@ export const ResortExperience = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Fallback to ensure visibility even if IntersectionObserver fails
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current
+          .querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in')
+          .forEach((el) => (el as HTMLElement).classList.add('animate-in'));
+      }
+    }, 600);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 sand-gradient">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

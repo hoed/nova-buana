@@ -31,6 +31,18 @@ export const ResortAccommodations = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Fallback to ensure visibility even if IntersectionObserver fails
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current
+          .querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in')
+          .forEach((el) => (el as HTMLElement).classList.add('animate-in'));
+      }
+    }, 600);
+    return () => clearTimeout(timer);
+  }, []);
+
   const accommodations = [
     {
       name: "Overwater Villa",
