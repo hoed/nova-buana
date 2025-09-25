@@ -45,7 +45,7 @@ export const ResortHero = () => {
           
           {/* Main Heading */}
           <h1 className="fade-in-up font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-shadow-luxury">
-            Serenity
+            Nova Buana
             <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light italic mt-2">
               Redefined
             </span>
