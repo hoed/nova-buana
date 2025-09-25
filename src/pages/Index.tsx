@@ -39,10 +39,10 @@ const Index = () => {
             <h3 className="font-serif text-2xl font-bold">Nova Buana Wisata</h3>
             <p className="text-white/80 max-w-md mx-auto">
               Where untouched shores meet infinite horizons, discover your private sanctuary 
-              amidst the tranquil whispers of the sea.
+              amidst the tranquil whispers of the sea. Website by Hoed
             </p>
             <div className="flex justify-center space-x-6 text-sm text-white/60">
-              <span>&copy; 2024 Serenity Resort. All rights reserved.</span>
+              <span>&copy; 2025 Nova Buana Wisata. All rights reserved.</span>
             </div>
           </div>
         </div>
