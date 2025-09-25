@@ -2,41 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Luxury Resort Design System - All colors, gradients, fonts, etc defined here. 
 All colors MUST be HSL.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Luxury Resort Color Palette */
+    --background: 28 25% 97%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ocean Blue Primary */
+    --primary: 200 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 200 75% 65%;
+    --primary-dark: 200 90% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Sandy Secondary */
+    --secondary: 35 35% 88%;
+    --secondary-foreground: 215 25% 27%;
+    --secondary-dark: 35 25% 75%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Ocean Tones */
+    --muted: 190 25% 92%;
+    --muted-foreground: 200 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Soft Green Accent */
+    --accent: 150 30% 75%;
+    --accent-foreground: 215 25% 27%;
+    --accent-dark: 150 40% 35%;
+
+    /* Luxury Gold */
+    --gold: 45 75% 68%;
+    --gold-dark: 45 85% 45%;
+
+    /* Deep Charcoal */
+    --charcoal: 215 25% 15%;
+    --charcoal-light: 215 15% 35%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 200 85% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Luxury Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-sunset: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--primary-light)));
+    --gradient-sand: linear-gradient(180deg, hsl(var(--secondary)), hsl(var(--background)));
+    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+    --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+
+    /* Luxury Shadows */
+    --shadow-luxury: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    --shadow-ocean: 0 20px 40px -10px hsla(var(--primary), 0.2);
+    --shadow-gold: 0 10px 30px -10px hsla(var(--gold), 0.3);
+
+    /* Smooth Transitions */
+    --transition-luxury: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +136,178 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
+  }
+
+  /* Typography */
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Parallax and Scroll Effects */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--secondary));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-dark));
+  }
+}
+
+@layer components {
+  /* Hero Gradient Overlay */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Ocean Gradient */
+  .ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+
+  /* Sunset Gradient */
+  .sunset-gradient {
+    background: var(--gradient-sunset);
+  }
+
+  /* Sand Gradient */
+  .sand-gradient {
+    background: var(--gradient-sand);
+  }
+
+  /* Luxury Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  /* Parallax Container */
+  .parallax-container {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+  }
+
+  /* Parallax Layer */
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax-back {
+    transform: translateZ(-1px) scale(2);
+  }
+
+  .parallax-base {
+    transform: translateZ(0);
+  }
+}
+
+@layer utilities {
+  /* Custom Shadows */
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-ocean {
+    box-shadow: var(--shadow-ocean);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Transitions */
+  .transition-luxury {
+    transition: var(--transition-luxury);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Text Shadows */
+  .text-shadow-luxury {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
