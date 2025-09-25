@@ -18,7 +18,10 @@ export const ResortNavigation = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navEl = document.querySelector('nav');
+      const offset = navEl ? (navEl as HTMLElement).getBoundingClientRect().height : 80;
+      const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
       setIsOpen(false);
     }
   };
