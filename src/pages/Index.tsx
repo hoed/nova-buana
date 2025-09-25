@@ -36,7 +36,7 @@ const Index = () => {
       <footer className="bg-charcoal text-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
-            <h3 className="font-serif text-2xl font-bold">Serenity Resort</h3>
+            <h3 className="font-serif text-2xl font-bold">Nova Buana Wisata</h3>
             <p className="text-white/80 max-w-md mx-auto">
               Where untouched shores meet infinite horizons, discover your private sanctuary 
               amidst the tranquil whispers of the sea.
