@@ -11,23 +11,23 @@ const Index = () => {
       <ResortNavigation />
       
       <main>
-        <section id="hero">
+        <section id="hero" className="min-h-screen">
           <ResortHero />
         </section>
         
-        <section id="experience">
+        <section id="experience" className="scroll-mt-20">
           <ResortExperience />
         </section>
         
-        <section id="accommodations">
+        <section id="accommodations" className="scroll-mt-20">
           <ResortAccommodations />
         </section>
         
-        <section id="activities">
+        <section id="activities" className="scroll-mt-20">
           <ResortActivities />
         </section>
         
-        <section id="booking">
+        <section id="booking" className="scroll-mt-20">
           <ResortBooking />
         </section>
       </main>
