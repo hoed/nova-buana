@@ -100,8 +100,7 @@ export const ResortAccommodations = () => {
           </h2>
           
           <p className="fade-in-up text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Each villa is a masterpiece of design and comfort, thoughtfully positioned to maximize 
-            privacy while offering breathtaking views of our pristine natural surroundings.
+            Temukan ketenangan dan kemewahan. Liburan pribadi Anda, relaksasi sempurna di destinasi eksotis pilihan.
           </p>
         </div>
 
