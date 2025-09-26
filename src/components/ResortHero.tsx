@@ -60,14 +60,7 @@ export const ResortHero = () => {
       {/* Hero Content */}
       //<div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Location Badge */}
-          <div className="fade-in-up flex items-center justify-center gap-2 mb-6">
-            <MapPin className="w-4 h-4" />
-            <span className="text-sm uppercase tracking-wider font-light">
-
-            </span>
-          </div>
-      //</div>
+        </div>
           
           {/* Main Heading */}
           <h1 className="fade-in-up font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-shadow-luxury">
