@@ -63,8 +63,38 @@ export const ResortBooking = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Booking request:', formData);
-    // Handle booking submission
+    
+    // Create email body with reservation details
+    const emailBody = `
+Reservation Request - Nova Buana Wisata
+
+Guest Information:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+
+Reservation Details:
+- Check-in Date: ${formData.checkIn}
+- Check-out Date: ${formData.checkOut}
+- Number of Guests: ${formData.guests}
+- Preferred Accommodation: ${formData.accommodation}
+
+Special Requests:
+${formData.message}
+
+Please confirm availability and send booking details.
+
+Best regards,
+${formData.name}
+    `.trim();
+
+    // Create mailto URL
+    const subject = encodeURIComponent('Reservation Request - Nova Buana Wisata');
+    const body = encodeURIComponent(emailBody);
+    const mailtoUrl = `mailto:hoedhud@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoUrl;
   };
 
   return (
