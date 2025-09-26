@@ -6,6 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { CalendarDays, Users, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 export const ResortBooking = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +20,8 @@ export const ResortBooking = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -61,40 +65,66 @@ export const ResortBooking = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create email body with reservation details
-    const emailBody = `
-Reservation Request - Nova Buana Wisata
+    // Validate required fields
+    if (!formData.checkIn || !formData.checkOut || !formData.guests || !formData.accommodation || !formData.name || !formData.email || !formData.phone) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-Guest Information:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Phone: ${formData.phone}
+    setIsSubmitting(true);
 
-Reservation Details:
-- Check-in Date: ${formData.checkIn}
-- Check-out Date: ${formData.checkOut}
-- Number of Guests: ${formData.guests}
-- Preferred Accommodation: ${formData.accommodation}
+    try {
+      const { error } = await supabase
+        .from('reservations')
+        .insert({
+          check_in_date: formData.checkIn,
+          check_out_date: formData.checkOut,
+          guests: formData.guests,
+          accommodation_type: formData.accommodation,
+          guest_name: formData.name,
+          guest_email: formData.email,
+          guest_phone: formData.phone,
+          special_requests: formData.message || null,
+        });
 
-Special Requests:
-${formData.message}
+      if (error) {
+        throw error;
+      }
 
-Please confirm availability and send booking details.
+      toast({
+        title: "Reservation Submitted!",
+        description: "Your reservation request has been received. We'll contact you within 24 hours.",
+      });
 
-Best regards,
-${formData.name}
-    `.trim();
+      // Reset form
+      setFormData({
+        checkIn: '',
+        checkOut: '',
+        guests: '',
+        accommodation: '',
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
 
-    // Create mailto URL
-    const subject = encodeURIComponent('Reservation Request - Nova Buana Wisata');
-    const body = encodeURIComponent(emailBody);
-    const mailtoUrl = `mailto:hoedhud@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoUrl;
+    } catch (error) {
+      console.error('Error submitting reservation:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your reservation. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -263,8 +293,8 @@ ${formData.name}
 
                   {/* Submit Button */}
                   <div className="pt-4">
-                    <Button type="submit" variant="hero" size="xl" className="w-full">
-                      Request Reservation
+                    <Button type="submit" variant="hero" size="xl" className="w-full" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Request Reservation"}
                     </Button>
                   </div>
                 </form>
