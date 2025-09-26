@@ -76,12 +76,12 @@ export const ResortExperience = () => {
                 <Waves className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-                Arrival Ritual
+                Private Tours
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Step into paradise with our signature welcome ceremony. Traditional flower garlands, 
-                refreshing coconut water, and the gentle melody of local musicians set the tone 
-                for your transformative journey.
+                Private Tour Luar Negeri Nova Buana Wisata menghadirkan perjalanan eksklusif, 
+                fleksibel, nyaman, dan penuh pengalaman berkesan dengan layanan personal 
+                sesuai kebutuhan Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
                 Learn More →
@@ -96,12 +96,12 @@ export const ResortExperience = () => {
                 <TreePine className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-                Island Discovery
+                Consortium Tours
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Venture beyond your villa to uncover hidden lagoons, pristine coral gardens, 
-                and secluded beaches accessible only to our guests. Each path reveals 
-                new wonders of our protected marine sanctuary.
+                Consortium Tour Luar Negeri Nova Buana Wisata menawarkan perjalanan hemat, 
+                nyaman, terorganisir, dengan rombongan internasional, layanan profesional, 
+                serta pengalaman budaya mendalam di destinasi impian Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
                 Explore →
@@ -116,12 +116,11 @@ export const ResortExperience = () => {
                 <Sunset className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-                Sunset Meditation
+                Travel Documents
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                As day transforms to night, join our guided meditation sessions on the beach. 
-                Feel the sand beneath your feet and let the rhythmic waves carry away 
-                the weight of the world.
+                Nova Buana Wisata melayani pengurusan dokumen tur luar negeri secara cepat, mudah, aman, terpercaya, 
+                mencakup paspor, visa, tiket, hingga asuransi perjalanan untuk kenyamanan Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
                 Book Session →
