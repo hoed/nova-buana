@@ -166,7 +166,7 @@ export const ResortBooking = () => {
             <Card className="fade-in-left shadow-luxury border-0 bg-white/80 backdrop-blur-sm">
               <CardHeader className="pb-8">
                 <CardTitle className="font-serif text-2xl lg:text-3xl text-foreground">
-                  Reserve Your Stay
+                  Reserve Your Tour
                 </CardTitle>
               </CardHeader>
               <CardContent>

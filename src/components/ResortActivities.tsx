@@ -196,7 +196,7 @@ export const ResortActivities = () => {
               tailored to your interests and preferences.
             </p>
             <Button variant="hero" size="xl" className="min-w-64">
-              Plan My Stay
+              Plan My Tour
             </Button>
           </div>
         </div>
