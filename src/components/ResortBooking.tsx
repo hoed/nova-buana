@@ -317,9 +317,9 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Location</h4>
                     <p className="text-sm text-muted-foreground">
-                      Paradise Island Resort<br />
-                      North Malé Atoll<br />
-                      Maldives 20026
+                      Taman Meruya Ilir Blok D1 B No.1<br />
+                      Kembangan<br />
+                      Jakarta Barat
                     </p>
                   </div>
                 </div>
@@ -329,8 +329,8 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Phone</h4>
                     <p className="text-sm text-muted-foreground">
-                      +960 664 2345<br />
-                      +1 (555) 123-4567
+                      +62 8776 499 4950<br />
+                      +62 8155 394 2464
                     </p>
                   </div>
                 </div>
@@ -340,8 +340,8 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Email</h4>
                     <p className="text-sm text-muted-foreground">
-                      reservations@paradiseresort.com<br />
-                      concierge@paradiseresort.com
+                      hoedhud@gmail.com<br />
+                      info@novabuana.co.id
                     </p>
                   </div>
                 </div>
