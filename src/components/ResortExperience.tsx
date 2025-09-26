@@ -84,7 +84,7 @@ export const ResortExperience = () => {
                 sesuai kebutuhan Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
-                Learn More →
+                Explore →
               </Button>
             </div>
           </div>
@@ -104,7 +104,7 @@ export const ResortExperience = () => {
                 serta pengalaman budaya mendalam di destinasi impian Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
-                Explore →
+                Learn More →
               </Button>
             </div>
           </div>
