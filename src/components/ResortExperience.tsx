@@ -62,8 +62,8 @@ export const ResortExperience = () => {
           </h2>
           
           <p className="fade-in-up text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Every moment at our resort is crafted to awaken your senses and restore your spirit. 
-            From sunrise yoga to moonlit dinners, discover experiences that transcend the ordinary.
+            Petualangan tak terlupakan menanti. Jelajahi keindahan Asia, 
+            ciptakan memori abadi bersama Nova Buana Wisata.
           </p>
         </div>
 
