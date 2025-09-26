@@ -47,9 +47,7 @@ export const ResortAccommodations = () => {
     {
       name: "Asia Tour",
       type: "Singapore, Hongkong, Korea, Japan, etc",
-      guests: 2,
-      bedrooms: 1,
-      bathrooms: 1,
+
       features: ["Private deck", "Direct ocean access", "Glass floor panels", "Infinity plunge pool"],
       description: "Jelajahi keajaiban Asia. Dari budaya kuno hingga pemandangan memukau, petualangan tak terlupakan menanti Anda.",
       price: "From $1,200",
