@@ -74,7 +74,7 @@ export const ResortNavigation = () => {
                   scrolled ? 'text-muted-foreground' : 'text-white/80'
                 }`}>
                   <Phone className="w-4 h-4" />
-                  <span>+960 664 2345</span>
+                  <span>+62 8155 394 2464</span>
                 </div>
               </div>
               <Button
@@ -125,7 +125,7 @@ export const ResortNavigation = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Mail className="w-4 h-4" />
-                  <span>reservations@serenity.com</span>
+                  <span>hoedhud@gmail.com</span>
                 </div>
                 <Button
                   variant="hero"
