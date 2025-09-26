@@ -51,7 +51,7 @@ export const ResortAccommodations = () => {
       bedrooms: 1,
       bathrooms: 1,
       features: ["Private deck", "Direct ocean access", "Glass floor panels", "Infinity plunge pool"],
-      description: "Suspended over crystal-clear lagoon waters, our signature overwater villas offer unparalleled privacy and direct connection to the sea.",
+      description: "Jelajahi keajaiban Asia. Dari budaya kuno hingga pemandangan memukau, petualangan tak terlupakan menanti Anda.",
       price: "From $1,200",
       image: villaImage
     },
@@ -62,7 +62,7 @@ export const ResortAccommodations = () => {
       bedrooms: 2,
       bathrooms: 2,
       features: ["Private beach access", "Tropical garden", "Outdoor shower", "Hammock terrace"],
-      description: "Nestled among swaying palms with direct beach access, these villas blend seamlessly with the natural island landscape.",
+      description: "Jelajahi keajaiban Eropa: sejarah, seni, dan budaya memukau menanti Anda di setiap kota.",
       price: "From $900",
       image: villaImage
     },
@@ -73,7 +73,7 @@ export const ResortAccommodations = () => {
       bedrooms: 3,
       bathrooms: 3,
       features: ["Panoramic sunset views", "Private chef service", "Wine cellar", "Rooftop terrace"],
-      description: "Our most exclusive accommodation offering unobstructed sunset views and personalized luxury services.",
+      description: "Rasakan magisnya Bandung, kehangatan Yogyakarta, dan surga Bali. Eksplorasi Indonesia tak terlupakan, ciptakan cerita indahmu!",
       price: "From $2,500",
       image: villaImage
     }
