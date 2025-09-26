@@ -45,8 +45,8 @@ export const ResortAccommodations = () => {
 
   const accommodations = [
     {
-      name: "Overwater Villa",
-      type: "Signature Suite",
+      name: "Asia Tour",
+      type: "Singapore, Hongkong, Korea, Japan, etc",
       guests: 2,
       bedrooms: 1,
       bathrooms: 1,
@@ -56,8 +56,8 @@ export const ResortAccommodations = () => {
       image: villaImage
     },
     {
-      name: "Beach Villa",
-      type: "Garden Paradise",
+      name: "Europe Tour",
+      type: "England, Germany, French, Dutch, Swiss",
       guests: 4,
       bedrooms: 2,
       bathrooms: 2,
@@ -67,8 +67,8 @@ export const ResortAccommodations = () => {
       image: villaImage
     },
     {
-      name: "Sunset Pavilion",
-      type: "Presidential Suite",
+      name: "Domestic Trip",
+      type: "Bandung, Jogjakarta, Bali",
       guests: 6,
       bedrooms: 3,
       bathrooms: 3,
