@@ -140,21 +140,7 @@ export const ResortAccommodations = () => {
                   </p>
                 </div>
 
-                {/* Amenities */}
-                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    <span>{accommodation.guests} guests</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Bed className="w-4 h-4" />
-                    <span>{accommodation.bedrooms} bedroom{accommodation.bedrooms > 1 ? 's' : ''}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Bath className="w-4 h-4" />
-                    <span>{accommodation.bathrooms} bathroom{accommodation.bathrooms > 1 ? 's' : ''}</span>
-                  </div>
-                </div>
+
 
                 {/* Features */}
                 <div className="space-y-3">
