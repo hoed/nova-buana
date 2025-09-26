@@ -174,7 +174,7 @@ export const ResortBooking = () => {
                   {/* Dates and Guests */}
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="checkIn" className="text-sm font-medium">Check-in Date</Label>
+                      <Label htmlFor="checkIn" className="text-sm font-medium">Start Tour</Label>
                       <div className="relative">
                         <Input
                           id="checkIn"
@@ -188,7 +188,7 @@ export const ResortBooking = () => {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="checkOut" className="text-sm font-medium">Check-out Date</Label>
+                      <Label htmlFor="checkOut" className="text-sm font-medium">End Tour</Label>
                       <div className="relative">
                         <Input
                           id="checkOut"
