@@ -55,18 +55,10 @@ export const ResortHero = () => {
       </div>
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 hero-gradient" />
+
       
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Location Badge */}
-          <div className="fade-in-up flex items-center justify-center gap-2 mb-6">
-            <MapPin className="w-4 h-4" />
-            <span className="text-sm uppercase tracking-wider font-light">
-              Maldivian Paradise
-            </span>
-          </div>
+
           
           {/* Main Heading */}
           <h1 className="fade-in-up font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-shadow-luxury">
@@ -109,14 +101,6 @@ export const ResortHero = () => {
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-up">
-          <div className="flex flex-col items-center space-y-2 animate-bounce">
-            <span className="text-sm uppercase tracking-wider font-light">Explore</span>
-            <ChevronDown className="w-6 h-6" />
-          </div>
-        </div>
-      </div>
       
       {/* Ambient Particles */}
       <div className="absolute inset-0 opacity-30">
