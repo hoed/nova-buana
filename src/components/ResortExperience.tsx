@@ -123,7 +123,7 @@ export const ResortExperience = () => {
                 mencakup paspor, visa seluruh dunia: single ataupun multiple entry, tiket, hingga asuransi perjalanan untuk kenyamanan Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
-                Book Session →
+                Submit Request →
               </Button>
             </div>
           </div>
