@@ -48,7 +48,7 @@ export const ResortAccommodations = () => {
       name: "Asia Tour",
       type: "Singapore, Hongkong, Korea, Japan, etc",
 
-      features: ["Private deck", "Direct ocean access", "Glass floor panels", "Infinity plunge pool"],
+      features: ["Meals", "Transportations", "Hotels", "Tour Guide"],
       description: "Jelajahi keajaiban Asia. Dari budaya kuno hingga pemandangan memukau, petualangan tak terlupakan menanti Anda.",
       price: "From $1,200",
       image: villaImage
@@ -59,7 +59,7 @@ export const ResortAccommodations = () => {
       guests: 4,
       bedrooms: 2,
       bathrooms: 2,
-      features: ["Private beach access", "Tropical garden", "Outdoor shower", "Hammock terrace"],
+      features: ["Direct Airplane", "Subway Train", "Outdoor Activities", "Entrance Tickets"],
       description: "Jelajahi keajaiban Eropa: sejarah, seni, dan budaya memukau menanti Anda di setiap kota.",
       price: "From $900",
       image: villaImage
@@ -70,7 +70,7 @@ export const ResortAccommodations = () => {
       guests: 6,
       bedrooms: 3,
       bathrooms: 3,
-      features: ["Panoramic sunset views", "Private chef service", "Wine cellar", "Rooftop terrace"],
+      features: ["Hotels", "Meals", "Transportation", "Tickets"],
       description: "Rasakan magisnya Bandung, kehangatan Yogyakarta, dan surga Bali. Eksplorasi Indonesia tak terlupakan, ciptakan cerita indahmu!",
       price: "From $2,500",
       image: villaImage
