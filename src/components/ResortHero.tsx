@@ -2,9 +2,18 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, MapPin } from 'lucide-react';
 import heroImage from '@/assets/hero-resort.jpg';
+import beachImage from '@/assets/activities-beach.jpg';
+import villaImage from '@/assets/villa-overwater.jpg';
 
 export const ResortHero = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const bannerImages = [
+    heroImage,
+    beachImage,
+    villaImage
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -12,22 +21,38 @@ export const ResortHero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Auto-rotate images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [bannerImages.length]);
+
   const parallaxOffset = scrollY * 0.5;
 
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Parallax Background */}
-      <div 
-        className="absolute inset-0 parallax"
-        style={{ 
-          transform: `translateY(${parallaxOffset}px)`,
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          willChange: 'transform'
-        }}
-      />
+      {/* Rotating Background Images */}
+      <div className="absolute inset-0">
+        {bannerImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              transform: `translateY(${parallaxOffset}px)`,
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+              willChange: 'transform'
+            }}
+          />
+        ))}
+      </div>
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 hero-gradient" />
