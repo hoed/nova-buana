@@ -91,6 +91,22 @@ export const ResortHero = () => {
               Virtual Tour
             </Button>
           </div>
+
+          {/* Navigation Dots */}
+          <div className="fade-in-up flex justify-center items-center gap-3 pt-8">
+            {bannerImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex 
+                    ? 'bg-white scale-125' 
+                    : 'bg-white/50 hover:bg-white/80'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
         
         {/* Scroll Indicator */}
