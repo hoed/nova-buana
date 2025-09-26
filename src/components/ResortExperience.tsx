@@ -120,7 +120,7 @@ export const ResortExperience = () => {
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nova Buana Wisata melayani pengurusan dokumen tur luar negeri secara cepat, mudah, aman, terpercaya, 
-                mencakup paspor, visa, tiket, hingga asuransi perjalanan untuk kenyamanan Anda.
+                mencakup paspor, visa seluruh dunia: single ataupun multiple entry, tiket, hingga asuransi perjalanan untuk kenyamanan Anda.
               </p>
               <Button variant="ghost" className="text-primary hover:text-primary-dark">
                 Book Session →
