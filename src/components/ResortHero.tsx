@@ -72,14 +72,14 @@ export const ResortHero = () => {
           <h1 className="fade-in-up font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-shadow-luxury">
             Nova Buana
             <span className="block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light italic mt-2">
-              Redefined
+              Wisata
             </span>
           </h1>
           
           {/* Tagline */}
           <p className="fade-in-up text-lg sm:text-xl lg:text-2xl font-light max-w-2xl mx-auto leading-relaxed text-shadow-soft">
-            Where untouched shores meet infinite horizons, discover your private sanctuary 
-            amidst the tranquil whispers of the sea
+            Nova Buana Wisata, sahabat perjalanan luar negeri Anda — nyaman, aman, berkelas, 
+            penuh pengalaman berharga, membuka cakrawala dunia bersama.
           </p>
           
           {/* CTAs */}
