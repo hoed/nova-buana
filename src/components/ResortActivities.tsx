@@ -133,7 +133,7 @@ export const ResortActivities = () => {
                 yang mengasyikkan.
               </p>
               <Button variant="hero" size="lg">
-                Explore Water Activities
+                Book Tours
               </Button>
             </div>
           </div>
@@ -160,7 +160,7 @@ export const ResortActivities = () => {
                 demi ketenangan dan pencerahan batin Anda.
               </p>
               <Button variant="luxury" size="lg">
-                Book Spa Treatment
+                Book Tours
               </Button>
             </div>
           </div>
@@ -192,7 +192,7 @@ export const ResortActivities = () => {
               Create Your Perfect Itinerary
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Our concierge team will craft a personalized experience schedule 
+              Our tour planner wll craft a personalized experience schedule 
               tailored to your interests and preferences.
             </p>
             <Button variant="hero" size="xl" className="min-w-64">
