@@ -2,7 +2,9 @@ import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Users, Waves, Bed, Bath } from 'lucide-react';
-import villaImage from '@/assets/villa-overwater.jpg';
+import asianTour from '@/assets/asian.png';
+import europeTour from '@/assets/europe.png';
+import domesticTour from '@/assets/domestic.png';
 
 export const ResortAccommodations = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -51,7 +53,7 @@ export const ResortAccommodations = () => {
       features: ["Meals", "Transportations", "Hotels", "Tour Guide"],
       description: "Jelajahi keajaiban Asia. Dari budaya kuno hingga pemandangan memukau, petualangan tak terlupakan menanti Anda.",
       price: "From $1,200",
-      image: villaImage
+      image: asianTour
     },
     {
       name: "Europe Tour",
@@ -62,7 +64,7 @@ export const ResortAccommodations = () => {
       features: ["Direct Airplane", "Subway Train", "Outdoor Activities", "Entrance Tickets"],
       description: "Jelajahi keajaiban Eropa: sejarah, seni, dan budaya memukau menanti Anda di setiap kota.",
       price: "From $900",
-      image: villaImage
+      image: europeTour
     },
     {
       name: "Domestic Trip",
@@ -73,7 +75,7 @@ export const ResortAccommodations = () => {
       features: ["Hotels", "Meals", "Transportation", "Tickets"],
       description: "Rasakan magisnya Bandung, kehangatan Yogyakarta, dan surga Bali. Eksplorasi Indonesia tak terlupakan, ciptakan cerita indahmu!",
       price: "From $2,500",
-      image: villaImage
+      image: domesticTour
     }
   ];
 
