@@ -223,16 +223,15 @@ export const ResortBooking = () => {
 
                   {/* Accommodation Type */}
                   <div className="space-y-2">
-                    <Label htmlFor="accommodation" className="text-sm font-medium">Preferred Accommodation</Label>
+                    <Label htmlFor="accommodation" className="text-sm font-medium">Preferred Services</Label>
                     <Select value={formData.accommodation} onValueChange={(value) => handleInputChange('accommodation', value)}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Choose your villa type" />
+                        <SelectValue placeholder="Choose services" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="overwater">Overwater Villa</SelectItem>
-                        <SelectItem value="beach">Beach Villa</SelectItem>
-                        <SelectItem value="sunset">Sunset Pavilion</SelectItem>
-                        <SelectItem value="garden">Garden Suite</SelectItem>
+                        <SelectItem value="hotel">Private Tour</SelectItem>
+                        <SelectItem value="motel">Consortium Tour</SelectItem>
+                        <SelectItem value="documents">Travel Documents</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -281,7 +280,7 @@ export const ResortBooking = () => {
 
                   {/* Special Requests */}
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-sm font-medium">Special Requests</Label>
+                    <Label htmlFor="message" className="text-sm font-medium">Services Request</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
