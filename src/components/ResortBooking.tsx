@@ -285,7 +285,7 @@ export const ResortBooking = () => {
                       id="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
-                      placeholder="Tell us about any special occasions, dietary requirements, or preferences..."
+                      placeholder="Tell us about your request, such as hongkong tour, Franch Tour, australia tour or country visa preferences..."
                       rows={4}
                     />
                   </div>
