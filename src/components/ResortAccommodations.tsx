@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Users, Waves, Bed, Bath } from 'lucide-react';
-import asianTour from '@/assets/asian.png';
-import europeTour from '@/assets/europe.png';
-import domesticTour from '@/assets/domestic.png';
+import asianTour from '@/assets/asian.jpg';
+import europeTour from '@/assets/europe.jpg';
+import domesticTour from '@/assets/domestic.jpg';
 
 export const ResortAccommodations = () => {
   const sectionRef = useRef<HTMLElement>(null);
