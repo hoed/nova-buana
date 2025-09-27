@@ -155,8 +155,8 @@ export const ResortBooking = () => {
           </h2>
           
           <p className="fade-in-up text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Let us craft an unforgettable experience tailored to your desires. 
-            Our team is ready to turn your dream vacation into reality.
+            Izinkan kami merancang pengalaman tak terlupakan yang disesuaikan dengan keinginan Anda. 
+            Tim kami siap mewujudkan liburan impian Anda menjadi kenyataan.
           </p>
         </div>
 

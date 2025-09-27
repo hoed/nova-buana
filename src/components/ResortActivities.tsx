@@ -192,8 +192,8 @@ export const ResortActivities = () => {
               Create Your Perfect Itinerary
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Our tour planner wll craft a personalized experience schedule 
-              tailored to your interests and preferences.
+              Tur Planner kami akan menyusun jadwal pengalaman yang dipersonalisasi, 
+              disesuaikan dengan minat dan preferensi Anda..
             </p>
             <Button variant="hero" size="xl" className="min-w-64">
               Plan My Tour
