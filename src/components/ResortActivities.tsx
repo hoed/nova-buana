@@ -104,8 +104,8 @@ export const ResortActivities = () => {
           </h2>
           
           <p className="fade-in-up text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From exhilarating water sports to tranquil wellness experiences, every day offers 
-            new opportunities to connect with nature and discover your sense of wonder.
+            Jelajahi dunia tanpa batas. Petualangan tiada akhir menanti Anda; 
+            temukan keajaiban bersama Nova Buana Wisata.
           </p>
         </div>
 
@@ -128,9 +128,9 @@ export const ResortActivities = () => {
             <div className="space-y-4">
               <h4 className="font-serif text-xl font-semibold text-foreground">Aquatic Excellence</h4>
               <p className="text-muted-foreground leading-relaxed">
-                Dive into our world-class water sports program featuring professional-grade equipment 
-                and certified instructors. From gentle kayaking through mangrove channels to 
-                exhilarating deep-sea fishing expeditions.
+                Selami program olahraga air kelas dunia kami yang menampilkan peralatan berstandar profesional dan instruktur bersertifikat. 
+                Mulai dari kayak santai menyusuri saluran bakau hingga ekspedisi memancing di laut dalam 
+                yang mengasyikkan.
               </p>
               <Button variant="hero" size="lg">
                 Explore Water Activities
@@ -155,9 +155,9 @@ export const ResortActivities = () => {
             <div className="space-y-4">
               <h4 className="font-serif text-xl font-semibold text-foreground">Holistic Healing</h4>
               <p className="text-muted-foreground leading-relaxed">
-                Our award-winning spa combines ancient healing traditions with modern wellness 
-                techniques. Experience transformative treatments in pavilions surrounded by 
-                lush tropical gardens and flowing water features.
+                Jelajahi destinasi yang menenangkan jiwa dan raga. Tur kami fokus pada pengalaman regeneratif, 
+                memadukan keindahan alam dengan aktivitas yang mendukung kesejahteraan holistik, 
+                demi ketenangan dan pencerahan batin Anda.
               </p>
               <Button variant="luxury" size="lg">
                 Book Spa Treatment
