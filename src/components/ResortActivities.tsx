@@ -59,8 +59,8 @@ export const ResortActivities = () => {
     },
     {
       icon: Sparkles,
-      title: "Spa & Wellness",
-      description: "Rejuvenating treatments inspired by ancient healing traditions",
+      title: "City Tours",
+      description: "Jelajahi jantung kota, temukan sejarah, budaya, dan kuliner terbaiknya.",
       gradient: "ocean-gradient"
     },
     {
