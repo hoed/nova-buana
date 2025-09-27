@@ -349,10 +349,10 @@ export const ResortBooking = () => {
                 <div className="flex items-start gap-4">
                   <Clock className="w-5 h-5 text-primary mt-1" />
                   <div>
-                    <h4 className="font-medium text-foreground mb-1">Response Time</h4>
+                    <h4 className="font-medium text-foreground mb-1">Legalty</h4>
                     <p className="text-sm text-muted-foreground">
-                      Within 24 hours<br />
-                      Monday - Sunday
+                      Kemkumham Reg No<br />
+                      AHU-066058.AH.01.30 Tahun 2024
                     </p>
                   </div>
                 </div>
