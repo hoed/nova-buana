@@ -31,6 +31,7 @@ export const ResortNavigation = () => {
     { name: 'Services', id: 'experience' },
     { name: 'Tours', id: 'accommodations' },
     { name: 'Activities', id: 'activities' },
+    { name: 'Gallery', id: 'gallery' },
     { name: 'Reservations', id: 'booking' },
   ];
 
