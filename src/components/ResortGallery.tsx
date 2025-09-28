@@ -7,42 +7,42 @@ import { Card } from '@/components/ui/card';
 const galleryImages = [
   {
     id: 1,
-    src: '/src/assets/activities-beach.jpg',
+    src: '@/assets/activities-beach.jpg',
     title: 'Pristine Beaches',
     description: 'Crystal clear waters and white sandy beaches',
     category: 'Beach'
   },
   {
     id: 2,
-    src: '/src/assets/asia.jpg',
+    src: '@/assets/asia.jpg',
     title: 'Asian Adventures',
     description: 'Explore vibrant cultures and ancient traditions',
     category: 'Culture'
   },
   {
     id: 3,
-    src: '/src/assets/europe.jpg',
+    src: '@/assets/europe.jpg',
     title: 'European Escapes',
     description: 'Historic cities and breathtaking landscapes',
     category: 'City'
   },
   {
     id: 4,
-    src: '/src/assets/domestic.jpg',
+    src: '@/assets/domestic.jpg',
     title: 'Domestic Wonders',
     description: 'Discover hidden gems in your homeland',
     category: 'Nature'
   },
   {
     id: 5,
-    src: '/src/assets/villa-overwater.jpg',
+    src: '@/assets/villa-overwater.jpg',
     title: 'Luxury Villas',
     description: 'Overwater bungalows and premium accommodations',
     category: 'Luxury'
   },
   {
     id: 6,
-    src: '/src/assets/spa-wellness.jpg',
+    src: '@/assets/spa-wellness.jpg',
     title: 'Wellness & Spa',
     description: 'Rejuvenate your mind, body and soul',
     category: 'Wellness'
