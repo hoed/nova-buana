@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, Mail } from 'lucide-react';
+import logoNovaBuana from '@/assets/logo-novabuana.png';
 
 export const ResortNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,11 +47,18 @@ export const ResortNavigation = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className={`font-serif text-2xl lg:text-3xl font-bold transition-luxury ${
-                scrolled ? 'text-foreground' : 'text-white'
-              }`}>
-                Nova Buana
-              </h1>
+              <div className="flex items-center gap-3">
+                <img 
+                  src={logoNovaBuana} 
+                  alt="Nova Buana Wisata Logo" 
+                  className="h-8 lg:h-10 w-auto"
+                />
+                <h1 className={`font-serif text-2xl lg:text-3xl font-bold transition-luxury ${
+                  scrolled ? 'text-foreground' : 'text-white'
+                }`}>
+                  Nova Buana
+                </h1>
+              </div>
             </div>
 
             {/* Desktop Navigation */}
