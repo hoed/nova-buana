@@ -15,7 +15,7 @@ const galleryImages = [
   {
     id: 1,
     src: pic1,
-    title: 'Pristine Beaches',
+    title: 'Religion Tourism',
     description: 'Crystal clear waters and white sandy beaches',
     category: 'Beach'
   },
@@ -36,21 +36,21 @@ const galleryImages = [
   {
     id: 4,
     src: pic4,
-    title: 'Domestic Wonders',
+    title: 'History Wonders',
     description: 'Discover hidden gems in your homeland',
     category: 'Nature'
   },
   {
     id: 5,
     src: pic5,
-    title: 'Luxury Villas',
+    title: 'Shores Magic',
     description: 'Overwater bungalows and premium accommodations',
     category: 'Luxury'
   },
   {
     id: 6,
     src: pic6,
-    title: 'Wellness & Spa',
+    title: 'City Journey',
     description: 'Rejuvenate your mind, body and soul',
     category: 'Wellness'
   }
