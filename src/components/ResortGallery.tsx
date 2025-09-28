@@ -3,12 +3,13 @@ import { ChevronDown, MapPin } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import pic1 from '@/assets/6249018721389627511.jpg'
 
 // Gallery images data
 const galleryImages = [
   {
     id: 1,
-    src: '@/assets/6249018721389627511.jpg',
+    src: pic1,
     title: 'Pristine Beaches',
     description: 'Crystal clear waters and white sandy beaches',
     category: 'Beach'
