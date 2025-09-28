@@ -3,6 +3,7 @@ import { ResortHero } from '@/components/ResortHero';
 import { ResortExperience } from '@/components/ResortExperience';
 import { ResortAccommodations } from '@/components/ResortAccommodations';
 import { ResortActivities } from '@/components/ResortActivities';
+import { ResortGallery } from '@/components/ResortGallery';
 import { ResortBooking } from '@/components/ResortBooking';
 
 const Index = () => {
@@ -25,6 +26,10 @@ const Index = () => {
         
         <section id="activities" className="scroll-mt-20">
           <ResortActivities />
+        </section>
+        
+        <section id="gallery" className="scroll-mt-20">
+          <ResortGallery />
         </section>
         
         <section id="booking" className="scroll-mt-20">
