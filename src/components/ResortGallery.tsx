@@ -7,7 +7,7 @@ import { Card } from '@/components/ui/card';
 const galleryImages = [
   {
     id: 1,
-    src: '/src/assets/6249018721389627511.jpg',
+    src: '@/assets/6249018721389627511.jpg',
     title: 'Pristine Beaches',
     description: 'Crystal clear waters and white sandy beaches',
     category: 'Beach'
