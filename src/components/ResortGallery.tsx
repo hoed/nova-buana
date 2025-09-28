@@ -3,7 +3,12 @@ import { ChevronDown, MapPin } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import pic1 from '@/assets/6249018721389627511.jpg'
+import pic1 from '@/assets/6249018721389627511.jpg';
+import pic2 from '@/assets/6249018721389627515.jpg';
+import pic3 from '@/assets/6249018721389627516.jpg';
+import pic4 from '@/assets/6249018721389627520.jpg';
+import pic5 from '@/assets/6249018721389627518.jpg';
+import pic6 from '@/assets/6249018721389627517.jpg';
 
 // Gallery images data
 const galleryImages = [
@@ -16,35 +21,35 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: '@/assets/6249018721389627515.jpg',
+    src: pic2,
     title: 'Asian Adventures',
     description: 'Explore vibrant cultures and ancient traditions',
     category: 'Culture'
   },
   {
     id: 3,
-    src: '@/assets/6249018721389627516.jpg',
+    src: pic3,
     title: 'European Escapes',
     description: 'Historic cities and breathtaking landscapes',
     category: 'City'
   },
   {
     id: 4,
-    src: '@/assets/6249018721389627520.jpg',
+    src: pic4,
     title: 'Domestic Wonders',
     description: 'Discover hidden gems in your homeland',
     category: 'Nature'
   },
   {
     id: 5,
-    src: '@/assets/6249018721389627518.jpg',
+    src: pic5,
     title: 'Luxury Villas',
     description: 'Overwater bungalows and premium accommodations',
     category: 'Luxury'
   },
   {
     id: 6,
-    src: '@/assets/6249018721389627517.jpg',
+    src: pic6,
     title: 'Wellness & Spa',
     description: 'Rejuvenate your mind, body and soul',
     category: 'Wellness'
