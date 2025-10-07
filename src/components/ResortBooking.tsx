@@ -365,11 +365,11 @@ export const ResortBooking = () => {
                   AI Tour Itinerary
                 </h3>
                 <p className="text-sm text-white/90 leading-relaxed mb-4">
-                  membuat rencana perjalanan otomatis sesuai minat dan waktu pengguna, 
+                  Dengan teknologi AI saat ini pengguna dapat membuat rencana perjalanan otomatis sesuai minat dan waktu, 
                   menghadirkan pengalaman wisata efisien, personal, dan mudah digunakan.
                 </p>
                 <Button variant="minimal" size="lg" className="w-full">
-                  <a href='https://smartour.xyz'>Create Itinerary</a>
+                  <a href='https://smartour.xyz'>Coba Sekarang</a>
                 </Button>
               </CardContent>
             </Card>
