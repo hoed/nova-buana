@@ -369,7 +369,7 @@ export const ResortBooking = () => {
                   menghadirkan pengalaman wisata efisien, personal, dan mudah digunakan.
                 </p>
                 <Button variant="minimal" size="lg" className="w-full">
-                  <a href="#">Create Itinerary</a>
+                  <a href='https://smartour.xyz'>Create Itinerary</a>
                 </Button>
               </CardContent>
             </Card>
