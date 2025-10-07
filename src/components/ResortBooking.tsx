@@ -328,8 +328,8 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Phone</h4>
                     <p className="text-sm text-muted-foreground">
-                      +62 8776 499 4950<br />
-                      +62 8155 394 2464
+                      <a href="#" className="hover:text-primary transition-smooth">+62 8776 499 4950</a><br />
+                      <a href="#" className="hover:text-primary transition-smooth">+62 8155 394 2464</a>
                     </p>
                   </div>
                 </div>
@@ -339,8 +339,8 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Email</h4>
                     <p className="text-sm text-muted-foreground">
-                      hoedhud@gmail.com<br />
-                      info@novabuana.co.id
+                      <a href="#" className="hover:text-primary transition-smooth">hoedhud@gmail.com</a><br />
+                      <a href="#" className="hover:text-primary transition-smooth">info@novabuana.co.id</a>
                     </p>
                   </div>
                 </div>

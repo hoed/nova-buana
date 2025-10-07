@@ -79,12 +79,15 @@ export const ResortNavigation = () => {
             {/* Contact & CTA */}
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-3 text-sm">
-                <div className={`flex items-center gap-2 ${
-                  scrolled ? 'text-muted-foreground' : 'text-white/80'
-                }`}>
+                <a 
+                  href="#" 
+                  className={`flex items-center gap-2 transition-smooth hover:text-primary ${
+                    scrolled ? 'text-muted-foreground' : 'text-white/80'
+                  }`}
+                >
                   <Phone className="w-4 h-4" />
                   <span>+62 8155 394 2464</span>
-                </div>
+                </a>
               </div>
               <Button
                 variant={scrolled ? "hero" : "minimal"}
@@ -128,14 +131,14 @@ export const ResortNavigation = () => {
               ))}
               
               <div className="pt-4 border-t border-border space-y-3">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Phone className="w-4 h-4" />
                   <span>+62 8776 499 4950 </span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                </a>
+                <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Mail className="w-4 h-4" />
                   <span>hoedhud@gmail.com</span>
-                </div>
+                </a>
                 <Button
                   variant="hero"
                   size="lg"
