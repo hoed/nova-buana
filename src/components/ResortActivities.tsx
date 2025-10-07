@@ -84,8 +84,22 @@ export const ResortActivities = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 sand-gradient">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="relative py-20 lg:py-32 overflow-hidden">
+      {/* Background Image with Blur */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('${activitiesImage}')`,
+          filter: 'blur(10px)',
+          transform: 'scale(1.1)',
+        }}
+      />
+      
+      {/* Overlay for better content readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/90 to-background/85 backdrop-blur-sm" />
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-24">
           <div className="fade-in-up flex items-center justify-center gap-2 mb-6">
