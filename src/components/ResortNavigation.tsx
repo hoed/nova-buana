@@ -215,7 +215,7 @@ export const ResortNavigation = () => {
           className="w-full shadow-luxury"
           onClick={() => scrollToSection('booking')}
         >
-          Reserve Now
+          <a href="#">Reserve Now</a>
         </Button>
       </div>
     </>

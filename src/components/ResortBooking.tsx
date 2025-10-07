@@ -369,7 +369,7 @@ export const ResortBooking = () => {
                   menghadirkan pengalaman wisata efisien, personal, dan mudah digunakan.
                 </p>
                 <Button variant="minimal" size="lg" className="w-full">
-                  Create Itinerary
+                  <a href="#">Create Itinerary</a>
                 </Button>
               </CardContent>
             </Card>
