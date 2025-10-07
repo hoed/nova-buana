@@ -362,14 +362,14 @@ export const ResortBooking = () => {
             <Card className="fade-in-right shadow-luxury border-0 ocean-gradient text-white">
               <CardContent className="p-6">
                 <h3 className="font-serif text-xl font-semibold mb-4">
-                  Concierge Services
+                  AI Tour Itinerary
                 </h3>
                 <p className="text-sm text-white/90 leading-relaxed mb-4">
-                  Our dedicated concierge team is available 24/7 to assist with 
-                  special arrangements, transportation, and personalized experiences.
+                  membuat rencana perjalanan otomatis sesuai minat dan waktu pengguna, 
+                  menghadirkan pengalaman wisata efisien, personal, dan mudah digunakan.
                 </p>
                 <Button variant="minimal" size="lg" className="w-full">
-                  Chat with Concierge
+                  Create Itinerary
                 </Button>
               </CardContent>
             </Card>
