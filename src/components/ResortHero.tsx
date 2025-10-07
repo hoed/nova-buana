@@ -81,9 +81,6 @@ export const ResortHero = () => {
             <Button variant="hero" size="xl" className="min-w-48" asChild>
               <a href="#">Discover Paradise</a>
             </Button>
-            <Button variant="minimal" size="xl" className="min-w-48">
-              Virtual Tour
-            </Button>
           </div>
 
           {/* Navigation Dots */}
