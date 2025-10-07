@@ -195,8 +195,8 @@ export const ResortActivities = () => {
               Tur Planner kami akan menyusun jadwal pengalaman yang dipersonalisasi, 
               disesuaikan dengan minat dan preferensi Anda..
             </p>
-            <Button variant="hero" size="xl" className="min-w-64">
-              Plan My Tour
+            <Button variant="hero" size="xl" className="min-w-64" asChild>
+              <a href="#">Plan My Tour</a>
             </Button>
           </div>
         </div>

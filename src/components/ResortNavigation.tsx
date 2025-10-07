@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 import logoNovaBuana from '@/assets/logo-novabuana.png';
 
 export const ResortNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [tourDropdownOpen, setTourDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +31,14 @@ export const ResortNavigation = () => {
   const navigation = [
     { name: 'Home', id: 'hero' },
     { name: 'Services', id: 'experience' },
-    { name: 'Tours', id: 'accommodations' },
     { name: 'Activities', id: 'activities' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Reservations', id: 'booking' },
+  ];
+
+  const tourSubmenu = [
+    { name: 'Outbound Tour', id: 'outbound-tour' },
+    { name: 'Inbound Tour', id: 'inbound-tour' },
   ];
 
   return (
@@ -74,6 +79,41 @@ export const ResortNavigation = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Tours Dropdown */}
+              <div className="relative">
+                <button
+                  onMouseEnter={() => setTourDropdownOpen(true)}
+                  onMouseLeave={() => setTourDropdownOpen(false)}
+                  className={`flex items-center gap-1 text-sm font-medium transition-luxury hover:text-primary ${
+                    scrolled ? 'text-foreground' : 'text-white hover:text-white/80'
+                  }`}
+                >
+                  Tours
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                
+                {tourDropdownOpen && (
+                  <div 
+                    onMouseEnter={() => setTourDropdownOpen(true)}
+                    onMouseLeave={() => setTourDropdownOpen(false)}
+                    className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden"
+                  >
+                    {tourSubmenu.map((item) => (
+                      <button
+                        key={item.name}
+                        onClick={() => {
+                          scrollToSection(item.id);
+                          setTourDropdownOpen(false);
+                        }}
+                        className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
+                      >
+                        {item.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Contact & CTA */}
@@ -129,6 +169,20 @@ export const ResortNavigation = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Tours submenu for mobile */}
+              <div className="space-y-2">
+                <div className="font-medium text-foreground py-2">Tours</div>
+                {tourSubmenu.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left text-muted-foreground hover:text-primary transition-smooth py-2 pl-4"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
               
               <div className="pt-4 border-t border-border space-y-3">
                 <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
