@@ -48,7 +48,7 @@ export const ResortNavigation = () => {
 
   const navigation = [
     { name: 'Home', id: 'hero' },
-    { name: 'Activities', id: 'accomodationa' },
+    { name: 'Activities', id: 'accomodations' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Booking', id: 'booking' },
   ];
