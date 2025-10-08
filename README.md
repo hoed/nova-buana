@@ -1,7 +1,7 @@
 
 # Nova Buana
 
-Nova Buana — frontend aplikasi web untuk agen wisata & kesehatan eksklusif.
+Nova Buana — frontend aplikasi web untuk agen wisata eksklusif.
 
 ## 📦 Teknologi Digunakan
 
