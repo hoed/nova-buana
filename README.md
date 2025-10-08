@@ -49,4 +49,4 @@ Repositori ini siap didorong ke layanan hosting seperti Vercel atau Netlify. Cuk
 
 ## 📄 Lisensi
 
-Lisensi proyek — misalnya MIT.
+Lisensi proyek — MIT.
