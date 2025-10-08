@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoNovaBuana from '@/assets/logo-novabuana.png';
 
 export const ResortNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [tourDropdownOpen, setTourDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,14 +21,28 @@ export const ResortNavigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navEl = document.querySelector('nav');
-      const offset = navEl ? (navEl as HTMLElement).getBoundingClientRect().height : 80;
-      const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-      setIsOpen(false);
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navEl = document.querySelector('nav');
+          const offset = navEl ? (navEl as HTMLElement).getBoundingClientRect().height : 80;
+          const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const navEl = document.querySelector('nav');
+        const offset = navEl ? (navEl as HTMLElement).getBoundingClientRect().height : 80;
+        const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
     }
+    setIsOpen(false);
   };
 
   const navigation = [
@@ -37,7 +54,7 @@ export const ResortNavigation = () => {
   ];
 
   const tourSubmenu = [
-    { name: 'Outbound Tour', id: 'outbound-tour' },
+    { name: 'Outbound Tour', path: '/outbound-tour' },
     { name: 'Inbound Tour', id: 'inbound-tour' },
   ];
 
@@ -103,7 +120,11 @@ export const ResortNavigation = () => {
                       <button
                         key={item.name}
                         onClick={() => {
-                          scrollToSection(item.id);
+                          if ('path' in item) {
+                            navigate(item.path);
+                          } else {
+                            scrollToSection(item.id);
+                          }
                           setTourDropdownOpen(false);
                         }}
                         className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
@@ -173,10 +194,16 @@ export const ResortNavigation = () => {
               {/* Tours submenu for mobile */}
               <div className="space-y-2">
                 <div className="font-medium text-foreground py-2">Tours</div>
-                {tourSubmenu.map((item) => (
+              {tourSubmenu.map((item) => (
                   <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => {
+                      if ('path' in item) {
+                        navigate(item.path);
+                      } else {
+                        scrollToSection(item.id);
+                      }
+                    }}
                     className="block w-full text-left text-muted-foreground hover:text-primary transition-smooth py-2 pl-4"
                   >
                     {item.name}

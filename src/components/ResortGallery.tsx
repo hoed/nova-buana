@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown, MapPin } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import pic1 from '@/assets/6249018721389627511.jpg';
@@ -59,6 +60,7 @@ const galleryImages = [
 export const ResortGallery = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const navigate = useNavigate();
 
   // Auto-slide effect
   useEffect(() => {
@@ -212,6 +214,17 @@ export const ResortGallery = () => {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* View Gallery Button */}
+        <div className="mt-12 text-center">
+          <Button 
+            variant="hero" 
+            size="lg"
+            onClick={() => navigate('/gallery')}
+          >
+            View Full Gallery
+          </Button>
         </div>
 
         {/* Gallery Stats */}
