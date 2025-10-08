@@ -5,6 +5,7 @@ import { ResortAccommodations } from '@/components/ResortAccommodations';
 import { ResortActivities } from '@/components/ResortActivities';
 import { ResortGallery } from '@/components/ResortGallery';
 import { ResortBooking } from '@/components/ResortBooking';
+import { Analytics } from "@vercel/analytics/react"
 
 const Index = () => {
   return (
