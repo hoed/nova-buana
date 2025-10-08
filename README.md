@@ -1,73 +1,55 @@
-# Welcome to your Lovable project
+````markdown
+# Nova Buana
 
-## Project info
+Nova Buana — frontend aplikasi web untuk agen wisata & kesehatan eksklusif.
 
-**URL**: https://lovable.dev/projects/70e150e0-0f67-4d0c-bc09-a9ab86fecd21
+## 📦 Teknologi Digunakan
 
-## How can I edit this code?
+- Vite  
+- React + TypeScript  
+- Tailwind CSS  
+- shadcn-ui  
+- Supabase (backend/DB)  
 
-There are several ways of editing your application.
+## 🚀 Mulai Pengembangan
 
-**Use Lovable**
+1. Clone repositori  
+   ```bash
+   git clone https://github.com/hoed/nova-buana.git
+   cd nova-buana
+````
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/70e150e0-0f67-4d0c-bc09-a9ab86fecd21) and start prompting.
+2. Instal dependensi
 
-Changes made via Lovable will be committed automatically to this repo.
+   ```bash
+   npm install
+   ```
+3. Jalankan aplikasi (development mode)
 
-**Use your preferred IDE**
+   ```bash
+   npm run dev
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠 Struktur Proyek
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* `src/` — kode frontend utama
+* `supabase/` — konfigurasi & skrip backend Supabase
+* `public/`, konfigurasi build & file statis
+* `.env` — variabel lingkungan (API key, URL, dsb)
 
-Follow these steps:
+## 📦 Deploy
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Repositori ini siap didorong ke layanan hosting seperti Vercel atau Netlify. Cukup push ke remote, lalu atur pengaturan domain & variabel lingkungan.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 👥 Kontribusi
 
-# Step 3: Install the necessary dependencies.
-npm i
+* Fork repositori
+* Buat branch fitur
+* Kirim pull request
+* Sertakan deskripsi jelas dan commit yang terstruktur
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📄 Lisensi
+
+Lisensi proyek (sesuaikan) — misalnya MIT.
+
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/70e150e0-0f67-4d0c-bc09-a9ab86fecd21) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
