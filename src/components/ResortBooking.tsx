@@ -339,8 +339,7 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Email</h4>
                     <p className="text-sm text-muted-foreground">
-                      <a href="#" className="hover:text-primary transition-smooth">hoedhud@gmail.com</a><br />
-                      <a href="#" className="hover:text-primary transition-smooth">info@novabuana.co.id</a>
+                      <a href="mailto:info@novabuana.id" className="hover:text-primary transition-smooth">info@novabuana.co.id</a>
                     </p>
                   </div>
                 </div>
