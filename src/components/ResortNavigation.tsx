@@ -79,7 +79,7 @@ export const ResortNavigation = () => {
                 <img 
                   src={logoNovaBuana} 
                   alt="Nova Buana Wisata Logo" 
-                  className="h-8 lg:h-10 w-auto"
+                  className="h-10 lg:h-10 w-auto"
                 />
                 <h1 className={`font-serif text-2xl lg:text-3xl font-bold transition-luxury ${
                   scrolled ? 'text-foreground' : 'text-white'
