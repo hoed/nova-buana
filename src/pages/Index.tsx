@@ -64,9 +64,6 @@ const Index = () => {
               amidst the tranquil whispers of the sea.
             </p>
             <div className="pt-6 border-t border-white/20">
-              <p className="text-white/70 text-sm">
-                Website by Hoed
-              </p>
               <p className="text-white/60 text-sm mt-2">
                 &copy; 2025 Nova Buana Wisata. All rights reserved.
               </p>
