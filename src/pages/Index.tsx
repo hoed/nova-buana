@@ -60,8 +60,8 @@ const Index = () => {
               Nova Buana Wisata
             </h3>
             <p className="text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-md">
-              Where untouched shores meet infinite horizons, discover your private sanctuary 
-              amidst the tranquil whispers of the sea.
+              Novabuana — agensi wisata mewah yang menggabungkan perjalanan dan kenyamanan, 
+              menawarkan pengalaman eksklusif dan holistik.
             </p>
             <div className="pt-6 border-t border-white/20">
               <p className="text-white/60 text-sm mt-2">
