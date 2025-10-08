@@ -79,7 +79,7 @@ export const ResortHero = () => {
           {/* CTAs */}
           <div className="fade-in-up flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button variant="hero" size="xl" className="min-w-48" asChild>
-              <a href="#">Discover Paradise</a>
+              <a href="accomodations">Discover Paradise</a>
             </Button>
           </div>
 
