@@ -84,7 +84,7 @@ export const ResortNavigation = () => {
                 <h1 className={`font-serif text-2xl lg:text-3xl font-bold transition-luxury ${
                   scrolled ? 'text-foreground' : 'text-white'
                 }`}>
-                  Nova Buana
+                  
                 </h1>
               </div>
             </div>
