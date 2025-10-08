@@ -182,7 +182,7 @@ export const ResortNavigation = () => {
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-3 text-sm">
                 <a 
-                  href="#" 
+                  href="mailto:info@novabuana.id" 
                   className={`flex items-center gap-2 transition-smooth hover:text-primary ${
                     scrolled ? 'text-muted-foreground' : 'text-white/80'
                   }`}
@@ -273,7 +273,7 @@ export const ResortNavigation = () => {
                 </a>
                 <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Mail className="w-4 h-4" />
-                  <span>hoedhud@gmail.com</span>
+                  <span>info@novabuana.id</span>
                 </a>
                 <Button
                   variant="hero"
