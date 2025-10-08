@@ -1,4 +1,4 @@
-````markdown
+
 # Nova Buana
 
 Nova Buana — frontend aplikasi web untuk agen wisata & kesehatan eksklusif.
@@ -17,7 +17,6 @@ Nova Buana — frontend aplikasi web untuk agen wisata & kesehatan eksklusif.
    ```bash
    git clone https://github.com/hoed/nova-buana.git
    cd nova-buana
-````
 
 2. Instal dependensi
 
