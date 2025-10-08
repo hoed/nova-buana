@@ -8,6 +8,7 @@ export const ResortNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [tourDropdownOpen, setTourDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -47,10 +48,15 @@ export const ResortNavigation = () => {
 
   const navigation = [
     { name: 'Home', id: 'hero' },
-    { name: 'Services', id: 'experience' },
     { name: 'Activities', id: 'activities' },
     { name: 'Gallery', id: 'gallery' },
-    { name: 'Reservations', id: 'booking' },
+    { name: 'Booking', id: 'booking' },
+  ];
+
+  const servicesSubmenu = [
+    { name: 'Private Tours', id: 'experience' },
+    { name: 'Consortium Tours', id: 'experience' },
+    { name: 'Travel Documents', id: 'experience' },
   ];
 
   const tourSubmenu = [
@@ -97,6 +103,41 @@ export const ResortNavigation = () => {
                 </button>
               ))}
               
+              {/* Services Dropdown */}
+              <div className="relative">
+                <button
+                  onMouseEnter={() => setServicesDropdownOpen(true)}
+                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                  className={`flex items-center gap-1 text-sm font-medium transition-luxury hover:text-primary ${
+                    scrolled ? 'text-foreground' : 'text-white hover:text-white/80'
+                  }`}
+                >
+                  Services
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                
+                {servicesDropdownOpen && (
+                  <div 
+                    onMouseEnter={() => setServicesDropdownOpen(true)}
+                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                    className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
+                  >
+                    {servicesSubmenu.map((item) => (
+                      <button
+                        key={item.name}
+                        onClick={() => {
+                          scrollToSection(item.id);
+                          setServicesDropdownOpen(false);
+                        }}
+                        className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
+                      >
+                        {item.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+              
               {/* Tours Dropdown */}
               <div className="relative">
                 <button
@@ -114,7 +155,7 @@ export const ResortNavigation = () => {
                   <div 
                     onMouseEnter={() => setTourDropdownOpen(true)}
                     onMouseLeave={() => setTourDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
                   >
                     {tourSubmenu.map((item) => (
                       <button
@@ -190,6 +231,20 @@ export const ResortNavigation = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Services submenu for mobile */}
+              <div className="space-y-2">
+                <div className="font-medium text-foreground py-2">Services</div>
+                {servicesSubmenu.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left text-muted-foreground hover:text-primary transition-smooth py-2 pl-4"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
               
               {/* Tours submenu for mobile */}
               <div className="space-y-2">
