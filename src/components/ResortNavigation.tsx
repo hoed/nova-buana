@@ -126,7 +126,7 @@ export const ResortNavigation = () => {
                   }`}
                 >
                   <Phone className="w-4 h-4" />
-                  <span>+62 8155 394 2464</span>
+                  <span><a href='https://wa.me/+6287764994950'>+62 8776 499 4950</a></span>
                 </a>
               </div>
               <Button
@@ -187,7 +187,7 @@ export const ResortNavigation = () => {
               <div className="pt-4 border-t border-border space-y-3">
                 <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Phone className="w-4 h-4" />
-                  <span>+62 8776 499 4950 </span>
+                  <span><a href='https://wa.me/+6287764994950'>+62 8776 499 4950</a></span>
                 </a>
                 <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Mail className="w-4 h-4" />
