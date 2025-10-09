@@ -48,6 +48,7 @@ export const ResortNavigation = () => {
 
   const navigation = [
     { name: 'Home', id: 'hero' },
+    { name: 'About Us', path: '/about' },
     { name: 'Activities', id: 'activities' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Booking', id: 'booking' },
@@ -94,7 +95,13 @@ export const ResortNavigation = () => {
               {navigation.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => {
+                    if ('path' in item) {
+                      navigate(item.path);
+                    } else {
+                      scrollToSection(item.id);
+                    }
+                  }}
                   className={`text-sm font-medium transition-luxury hover:text-primary ${
                     scrolled ? 'text-foreground' : 'text-white hover:text-white/80'
                   }`}
@@ -182,13 +189,13 @@ export const ResortNavigation = () => {
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center space-x-3 text-sm">
                 <a 
-                  href="mailto:info@novabuana.id" 
+                  href="https://wa.me/+6287764994950" 
                   className={`flex items-center gap-2 transition-smooth hover:text-primary ${
                     scrolled ? 'text-muted-foreground' : 'text-white/80'
                   }`}
                 >
                   <Phone className="w-4 h-4" />
-                  <span><a href='https://wa.me/+6287764994950'>+62 8776 499 4950</a></span>
+                  <span>+62 8776 499 4950</span>
                 </a>
               </div>
               <Button
@@ -220,12 +227,19 @@ export const ResortNavigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-sm border-t border-border">
+            <div className="lg:hidden bg-white/95 backdrop-blur-sm border-t border-border">
             <div className="px-4 py-6 space-y-4">
               {navigation.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => {
+                    if ('path' in item) {
+                      navigate(item.path);
+                      setIsOpen(false);
+                    } else {
+                      scrollToSection(item.id);
+                    }
+                  }}
                   className="block w-full text-left text-foreground hover:text-primary transition-smooth py-2"
                 >
                   {item.name}
@@ -267,11 +281,11 @@ export const ResortNavigation = () => {
               </div>
               
               <div className="pt-4 border-t border-border space-y-3">
-                <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
+                <a href="https://wa.me/+6287764994950" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Phone className="w-4 h-4" />
-                  <span><a href='https://wa.me/+6287764994950'>+62 8776 499 4950</a></span>
+                  <span>+62 8776 499 4950</span>
                 </a>
-                <a href="#" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
+                <a href="mailto:info@novabuana.id" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth">
                   <Mail className="w-4 h-4" />
                   <span>info@novabuana.id</span>
                 </a>
