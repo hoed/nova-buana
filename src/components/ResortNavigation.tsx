@@ -48,10 +48,10 @@ export const ResortNavigation = () => {
 
   const navigation = [
     { name: 'Home', id: 'hero' },
-    { name: 'About Us', path: '/about' },
     { name: 'Activities', id: 'activities' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Booking', id: 'booking' },
+    { name: 'About Us', path: '/about' },
   ];
 
   const servicesSubmenu = [

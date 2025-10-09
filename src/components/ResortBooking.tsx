@@ -8,6 +8,32 @@ import { Textarea } from '@/components/ui/textarea';
 import { CalendarDays, Users, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { z } from 'zod';
+
+// Validation schema for security
+const bookingSchema = z.object({
+  checkIn: z.string().min(1, "Check-in date is required"),
+  checkOut: z.string().min(1, "Check-out date is required"),
+  guests: z.string().min(1, "Number of guests is required"),
+  accommodation: z.string().min(1, "Service type is required"),
+  name: z.string()
+    .trim()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters")
+    .regex(/^[a-zA-Z\s]+$/, "Name should only contain letters and spaces"),
+  email: z.string()
+    .trim()
+    .email("Invalid email address")
+    .max(255, "Email must be less than 255 characters"),
+  phone: z.string()
+    .trim()
+    .min(10, "Phone number must be at least 10 characters")
+    .max(20, "Phone number must be less than 20 characters")
+    .regex(/^[0-9+\-\s()]+$/, "Phone number contains invalid characters"),
+  message: z.string()
+    .max(1000, "Message must be less than 1000 characters")
+    .optional()
+});
 
 export const ResortBooking = () => {
   const [formData, setFormData] = useState({
@@ -68,31 +94,27 @@ export const ResortBooking = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate required fields
-    if (!formData.checkIn || !formData.checkOut || !formData.guests || !formData.accommodation || !formData.name || !formData.email || !formData.phone) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
+      // Validate form data with zod schema
+      const validatedData = bookingSchema.parse(formData);
+
+      // Sanitize data before database insertion
+      const sanitizedData = {
+        check_in_date: validatedData.checkIn,
+        check_out_date: validatedData.checkOut,
+        guests: validatedData.guests,
+        accommodation_type: validatedData.accommodation,
+        guest_name: validatedData.name.trim(),
+        guest_email: validatedData.email.toLowerCase().trim(),
+        guest_phone: validatedData.phone.trim(),
+        special_requests: validatedData.message?.trim() || null,
+      };
+
       const { error } = await supabase
         .from('reservations')
-        .insert({
-          check_in_date: formData.checkIn,
-          check_out_date: formData.checkOut,
-          guests: formData.guests,
-          accommodation_type: formData.accommodation,
-          guest_name: formData.name,
-          guest_email: formData.email,
-          guest_phone: formData.phone,
-          special_requests: formData.message || null,
-        });
+        .insert(sanitizedData);
 
       if (error) {
         throw error;
@@ -116,12 +138,21 @@ export const ResortBooking = () => {
       });
 
     } catch (error) {
-      console.error('Error submitting reservation:', error);
-      toast({
-        title: "Submission Failed",
-        description: "There was an error submitting your reservation. Please try again.",
-        variant: "destructive",
-      });
+      if (error instanceof z.ZodError) {
+        // Handle validation errors
+        const firstError = error.issues[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: "There was an error submitting your reservation. Please try again.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -328,8 +359,8 @@ export const ResortBooking = () => {
                   <div>
                     <h4 className="font-medium text-foreground mb-1">Phone</h4>
                     <p className="text-sm text-muted-foreground">
-                      <a href="#" className="hover:text-primary transition-smooth">+62 8776 499 4950</a><br />
-                      <a href="#" className="hover:text-primary transition-smooth">+62 8155 394 2464</a>
+                      <a href="https://wa.me/6287764994950" className="hover:text-primary transition-smooth">+62 8776 499 4950</a><br />
+                      <a href="https://wa.me/6281553942464" className="hover:text-primary transition-smooth">+62 8155 394 2464</a>
                     </p>
                   </div>
                 </div>
@@ -367,8 +398,13 @@ export const ResortBooking = () => {
                   Dengan teknologi AI saat ini pengguna dapat membuat rencana perjalanan otomatis sesuai minat dan waktu, 
                   menghadirkan pengalaman wisata efisien, personal, dan mudah digunakan.
                 </p>
-                <Button variant="minimal" size="lg" className="w-full">
-                  <a href='https://smartour.xyz'>Coba Sekarang</a>
+                <Button 
+                  variant="minimal" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={() => window.open('https://smartour.xyz', '_blank', 'noopener,noreferrer')}
+                >
+                  Coba Sekarang
                 </Button>
               </CardContent>
             </Card>
