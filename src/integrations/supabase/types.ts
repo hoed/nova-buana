@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      reservation_rate_limit: {
+        Row: {
+          created_at: string | null
+          id: string
+          ip_address: string
+          last_submission_at: string | null
+          submission_count: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          ip_address: string
+          last_submission_at?: string | null
+          submission_count?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          ip_address?: string
+          last_submission_at?: string | null
+          submission_count?: number | null
+        }
+        Relationships: []
+      }
       reservations: {
         Row: {
           accommodation_type: string
@@ -85,6 +109,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_old_rate_limits: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

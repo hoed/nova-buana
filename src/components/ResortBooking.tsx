@@ -10,10 +10,14 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 
-// Validation schema for security
+// Validation schema for security with enhanced date validation
 const bookingSchema = z.object({
-  checkIn: z.string().min(1, "Check-in date is required"),
-  checkOut: z.string().min(1, "Check-out date is required"),
+  checkIn: z.string()
+    .min(1, "Check-in date is required")
+    .refine(date => new Date(date) >= new Date(new Date().setHours(0,0,0,0)), 
+      "Check-in date cannot be in the past"),
+  checkOut: z.string()
+    .min(1, "Check-out date is required"),
   guests: z.string().min(1, "Number of guests is required"),
   accommodation: z.string().min(1, "Service type is required"),
   name: z.string()
@@ -33,6 +37,9 @@ const bookingSchema = z.object({
   message: z.string()
     .max(1000, "Message must be less than 1000 characters")
     .optional()
+}).refine(data => new Date(data.checkOut) > new Date(data.checkIn), {
+  message: "Check-out must be after check-in",
+  path: ["checkOut"]
 });
 
 export const ResortBooking = () => {
@@ -100,24 +107,24 @@ export const ResortBooking = () => {
       // Validate form data with zod schema
       const validatedData = bookingSchema.parse(formData);
 
-      // Sanitize data before database insertion
-      const sanitizedData = {
-        check_in_date: validatedData.checkIn,
-        check_out_date: validatedData.checkOut,
-        guests: validatedData.guests,
-        accommodation_type: validatedData.accommodation,
-        guest_name: validatedData.name.trim(),
-        guest_email: validatedData.email.toLowerCase().trim(),
-        guest_phone: validatedData.phone.trim(),
-        special_requests: validatedData.message?.trim() || null,
-      };
+      // Call edge function for secure, rate-limited reservation creation
+      const { data, error } = await supabase.functions.invoke('create-reservation', {
+        body: {
+          checkIn: validatedData.checkIn,
+          checkOut: validatedData.checkOut,
+          guests: validatedData.guests,
+          accommodationType: validatedData.accommodation,
+          name: validatedData.name,
+          phone: validatedData.phone,
+          email: validatedData.email,
+          specialRequests: validatedData.message
+        }
+      });
 
-      const { error } = await supabase
-        .from('reservations')
-        .insert(sanitizedData);
+      if (error) throw error;
 
-      if (error) {
-        throw error;
+      if (data?.error) {
+        throw new Error(data.error);
       }
 
       toast({
@@ -147,9 +154,10 @@ export const ResortBooking = () => {
           variant: "destructive",
         });
       } else {
+        const errorMessage = error instanceof Error ? error.message : "There was an error submitting your reservation. Please try again.";
         toast({
           title: "Submission Failed",
-          description: "There was an error submitting your reservation. Please try again.",
+          description: errorMessage,
           variant: "destructive",
         });
       }
@@ -210,6 +218,8 @@ export const ResortBooking = () => {
                         <Input
                           id="checkIn"
                           type="date"
+                          min={new Date().toISOString().split('T')[0]}
+                          max={new Date(Date.now() + 730*24*60*60*1000).toISOString().split('T')[0]}
                           value={formData.checkIn}
                           onChange={(e) => handleInputChange('checkIn', e.target.value)}
                           className="pl-10"
@@ -224,6 +234,8 @@ export const ResortBooking = () => {
                         <Input
                           id="checkOut"
                           type="date"
+                          min={formData.checkIn || new Date().toISOString().split('T')[0]}
+                          max={new Date(Date.now() + 730*24*60*60*1000).toISOString().split('T')[0]}
                           value={formData.checkOut}
                           onChange={(e) => handleInputChange('checkOut', e.target.value)}
                           className="pl-10"
