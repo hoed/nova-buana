@@ -13,6 +13,12 @@ import pic6 from '@/assets/6249018721389627517.jpg';
 import pic7 from '@/assets/6249018721389627518.jpg';
 import pic8 from '@/assets/6249018721389627519.jpg';
 import pic9 from '@/assets/6249018721389627520.jpg';
+import pic10 from '@/assets/gallery-hongkong-harbor.jpg';
+import pic11 from '@/assets/gallery-paris-louvre.jpg';
+import pic12 from '@/assets/gallery-amsterdam-canal.jpg';
+import pic13 from '@/assets/gallery-group-temple.jpg';
+import pic14 from '@/assets/gallery-tokyo-temple.jpg';
+import pic15 from '@/assets/gallery-dubai-museum.jpg';
 
 const galleryImages = [
   {
@@ -77,6 +83,48 @@ const galleryImages = [
     title: 'Natural Wonders',
     description: 'Stunning landscapes and wildlife',
     category: 'Nature'
+  },
+  {
+    id: 10,
+    src: pic10,
+    title: 'Hong Kong Harbor',
+    description: 'Victoria Harbour skyline and Star Ferry experience',
+    category: 'City'
+  },
+  {
+    id: 11,
+    src: pic11,
+    title: 'Paris Louvre',
+    description: 'Iconic glass pyramid and French culture',
+    category: 'Culture'
+  },
+  {
+    id: 12,
+    src: pic12,
+    title: 'Amsterdam Canals',
+    description: 'Historic canal houses and Dutch charm',
+    category: 'City'
+  },
+  {
+    id: 13,
+    src: pic13,
+    title: 'Temple Adventures',
+    description: 'Southeast Asian cultural exploration',
+    category: 'Culture'
+  },
+  {
+    id: 14,
+    src: pic14,
+    title: 'Tokyo Temples',
+    description: 'Traditional Japanese heritage sites',
+    category: 'Culture'
+  },
+  {
+    id: 15,
+    src: pic15,
+    title: 'Dubai Museum',
+    description: 'Arabian heritage and historic architecture',
+    category: 'Culture'
   }
 ];
 
