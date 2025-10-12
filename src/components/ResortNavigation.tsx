@@ -48,21 +48,19 @@ export const ResortNavigation = () => {
 
   const navigation = [
     { name: 'Home', id: 'hero' },
-    { name: 'Activities', id: 'activities' },
-    { name: 'Gallery', id: 'gallery' },
-    { name: 'Booking', id: 'booking' },
-    { name: 'About Us', path: '/about' },
+    { name: 'About', path: '/about' },
+    { name: 'Gallery', path: '/gallery' },
   ];
 
   const servicesSubmenu = [
-    { name: 'Private Tours', id: 'experience' },
-    { name: 'Consortium Tours', id: 'experience' },
-    { name: 'Travel Documents', id: 'experience' },
+    { name: 'Private Tours', path: '/private-tour' },
+    { name: 'Consortium Tours', path: '/consortium-tours' },
+    { name: 'Travel Documents', path: '/travel-documents' },
   ];
 
   const tourSubmenu = [
     { name: 'Outbound Tour', path: '/outbound-tour' },
-    { name: 'Inbound Tour', id: 'inbound-tour' },
+    { name: 'Inbound Tours', path: 'https://beyourtour.xyz', external: true },
   ];
 
   return (
@@ -133,8 +131,10 @@ export const ResortNavigation = () => {
                       <button
                         key={item.name}
                         onClick={() => {
-                          scrollToSection(item.id);
                           setServicesDropdownOpen(false);
+                          if (item.path) {
+                            navigate(item.path);
+                          }
                         }}
                         className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
                       >
@@ -165,20 +165,31 @@ export const ResortNavigation = () => {
                     className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
                   >
                     {tourSubmenu.map((item) => (
-                      <button
-                        key={item.name}
-                        onClick={() => {
-                          if ('path' in item) {
-                            navigate(item.path);
-                          } else {
-                            scrollToSection(item.id);
-                          }
-                          setTourDropdownOpen(false);
-                        }}
-                        className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
-                      >
-                        {item.name}
-                      </button>
+                      item.external ? (
+                        <a
+                          key={item.name}
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setTourDropdownOpen(false)}
+                          className="block px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <button
+                          key={item.name}
+                          onClick={() => {
+                            setTourDropdownOpen(false);
+                            if (item.path) {
+                              navigate(item.path);
+                            }
+                          }}
+                          className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-primary/10 hover:text-primary transition-smooth"
+                        >
+                          {item.name}
+                        </button>
+                      )
                     ))}
                   </div>
                 )}
@@ -252,7 +263,12 @@ export const ResortNavigation = () => {
                 {servicesSubmenu.map((item) => (
                   <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => {
+                      setIsOpen(false);
+                      if (item.path) {
+                        navigate(item.path);
+                      }
+                    }}
                     className="block w-full text-left text-muted-foreground hover:text-primary transition-smooth py-2 pl-4"
                   >
                     {item.name}
@@ -264,20 +280,32 @@ export const ResortNavigation = () => {
               <div className="space-y-2">
                 <div className="font-medium text-foreground py-2">Tours</div>
               {tourSubmenu.map((item) => (
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="block text-muted-foreground hover:text-primary transition-smooth py-2 pl-4"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
                   <button
                     key={item.name}
                     onClick={() => {
-                      if ('path' in item) {
+                      setIsOpen(false);
+                      if (item.path) {
                         navigate(item.path);
-                      } else {
-                        scrollToSection(item.id);
                       }
                     }}
                     className="block w-full text-left text-muted-foreground hover:text-primary transition-smooth py-2 pl-4"
                   >
                     {item.name}
                   </button>
-                ))}
+                )
+              ))}
               </div>
               
               <div className="pt-4 border-t border-border space-y-3">
