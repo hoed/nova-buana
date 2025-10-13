@@ -58,9 +58,8 @@ export const ResortHero = () => {
       <div className="absolute inset-0 hero-gradient" />
       
       {/* Hero Content */}
-      //<div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-8">
-        </div>
           
           {/* Main Heading */}
           <h1 className="fade-in-up font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-shadow-luxury">
@@ -78,12 +77,32 @@ export const ResortHero = () => {
           
           {/* CTAs */}
           <div className="fade-in-up flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button variant="hero" 
-            size="xl" 
-            className="min-w-48" 
-            asChild
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="min-w-48"
+              onClick={() => {
+                const element = document.getElementById('booking');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
-              Discover Paradise
+              Pesan Tour Sekarang
+            </Button>
+            
+            <Button 
+              variant="minimal" 
+              size="xl" 
+              className="min-w-48"
+              onClick={() => {
+                const element = document.getElementById('experience');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Jelajahi Lebih Lanjut
             </Button>
           </div>
 
@@ -103,6 +122,7 @@ export const ResortHero = () => {
             ))}
           </div>
         </div>
+      </div>
         
       
       {/* Ambient Particles */}

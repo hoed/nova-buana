@@ -1,11 +1,17 @@
 import { ResortNavigation } from '@/components/ResortNavigation';
 import { ResortHero } from '@/components/ResortHero';
 import { ResortExperience } from '@/components/ResortExperience';
+import { ServicesSection } from '@/components/ServicesSection';
+import { DestinationsSection } from '@/components/DestinationsSection';
+import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { ResortAccommodations } from '@/components/ResortAccommodations';
 import { ResortActivities } from '@/components/ResortActivities';
+import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { ResortGallery } from '@/components/ResortGallery';
+import { CTASection } from '@/components/CTASection';
 import { ResortBooking } from '@/components/ResortBooking';
 import { Analytics } from "@vercel/analytics/react"
+import { WhatsAppButton } from '@/components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -21,6 +27,18 @@ const Index = () => {
           <ResortExperience />
         </section>
         
+        <section id="services" className="scroll-mt-20">
+          <ServicesSection />
+        </section>
+        
+        <section id="destinations" className="scroll-mt-20">
+          <DestinationsSection />
+        </section>
+        
+        <section id="why-choose-us" className="scroll-mt-20">
+          <WhyChooseUs />
+        </section>
+        
         <section id="accommodations" className="scroll-mt-20">
           <ResortAccommodations />
         </section>
@@ -29,8 +47,16 @@ const Index = () => {
           <ResortActivities />
         </section>
         
+        <section id="testimonials" className="scroll-mt-20">
+          <TestimonialsSection />
+        </section>
+        
         <section id="gallery" className="scroll-mt-20">
           <ResortGallery />
+        </section>
+        
+        <section id="cta" className="scroll-mt-20">
+          <CTASection />
         </section>
         
         <section id="booking" className="scroll-mt-20">
@@ -71,6 +97,9 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      
+      <WhatsAppButton />
+      <Analytics />
     </div>
   );
 };
