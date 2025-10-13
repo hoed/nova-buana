@@ -3,7 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Analytics } from "@vercel/analytics/react";
 import { FileText, Globe, CheckCircle, Clock, Shield, HeadphonesIcon } from 'lucide-react';
-import heroImage from '@/assets/domestic.jpg';
+import heroImage from '@/assets/travel-docs-hero.jpg';
+import visaImage from '@/assets/visa-processing.jpg';
 
 const TravelDocuments = () => {
   return (
@@ -126,9 +127,30 @@ const TravelDocuments = () => {
         </div>
       </section>
 
-      {/* Visa Countries */}
+      {/* Image Showcase */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div className="order-2 md:order-1">
+              <img 
+                src={visaImage} 
+                alt="Visa Processing Services" 
+                className="rounded-2xl shadow-elegant w-full h-auto object-cover"
+              />
+            </div>
+            <div className="order-1 md:order-2">
+              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Proses Mudah & Terpercaya
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Pengurusan dokumen perjalanan tidak perlu rumit dan menyita waktu. Tim kami yang berpengalaman siap membantu mengurus semua kebutuhan visa, paspor, dan dokumen lainnya dengan proses yang cepat dan transparan.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Dengan jaringan luas di berbagai kedutaan dan konsulat, kami memastikan aplikasi Anda diproses dengan efisien dan profesional.
+              </p>
+            </div>
+          </div>
+
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Negara Tujuan Visa

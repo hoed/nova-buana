@@ -9,6 +9,8 @@ export const ResortNavigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [tourDropdownOpen, setTourDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [tourDropdownTimeout, setTourDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [servicesDropdownTimeout, setServicesDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -111,8 +113,14 @@ export const ResortNavigation = () => {
               {/* Services Dropdown */}
               <div className="relative">
                 <button
-                  onMouseEnter={() => setServicesDropdownOpen(true)}
-                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                  onMouseEnter={() => {
+                    if (servicesDropdownTimeout) clearTimeout(servicesDropdownTimeout);
+                    setServicesDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => setServicesDropdownOpen(false), 200);
+                    setServicesDropdownTimeout(timeout);
+                  }}
                   className={`flex items-center gap-1 text-sm font-medium transition-luxury hover:text-primary ${
                     scrolled ? 'text-foreground' : 'text-white hover:text-white/80'
                   }`}
@@ -123,9 +131,15 @@ export const ResortNavigation = () => {
                 
                 {servicesDropdownOpen && (
                   <div 
-                    onMouseEnter={() => setServicesDropdownOpen(true)}
-                    onMouseLeave={() => setServicesDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
+                    onMouseEnter={() => {
+                      if (servicesDropdownTimeout) clearTimeout(servicesDropdownTimeout);
+                      setServicesDropdownOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      const timeout = setTimeout(() => setServicesDropdownOpen(false), 200);
+                      setServicesDropdownTimeout(timeout);
+                    }}
+                    className="absolute top-full left-0 mt-2 w-48 bg-white backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
                   >
                     {servicesSubmenu.map((item) => (
                       <button
@@ -148,8 +162,14 @@ export const ResortNavigation = () => {
               {/* Tours Dropdown */}
               <div className="relative">
                 <button
-                  onMouseEnter={() => setTourDropdownOpen(true)}
-                  onMouseLeave={() => setTourDropdownOpen(false)}
+                  onMouseEnter={() => {
+                    if (tourDropdownTimeout) clearTimeout(tourDropdownTimeout);
+                    setTourDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => setTourDropdownOpen(false), 200);
+                    setTourDropdownTimeout(timeout);
+                  }}
                   className={`flex items-center gap-1 text-sm font-medium transition-luxury hover:text-primary ${
                     scrolled ? 'text-foreground' : 'text-white hover:text-white/80'
                   }`}
@@ -160,9 +180,15 @@ export const ResortNavigation = () => {
                 
                 {tourDropdownOpen && (
                   <div 
-                    onMouseEnter={() => setTourDropdownOpen(true)}
-                    onMouseLeave={() => setTourDropdownOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
+                    onMouseEnter={() => {
+                      if (tourDropdownTimeout) clearTimeout(tourDropdownTimeout);
+                      setTourDropdownOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      const timeout = setTimeout(() => setTourDropdownOpen(false), 200);
+                      setTourDropdownTimeout(timeout);
+                    }}
+                    className="absolute top-full left-0 mt-2 w-48 bg-white backdrop-blur-sm rounded-lg shadow-luxury border border-border overflow-hidden z-50"
                   >
                     {tourSubmenu.map((item) => (
                       item.external ? (

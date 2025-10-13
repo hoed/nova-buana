@@ -3,7 +3,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Analytics } from "@vercel/analytics/react";
 import { Users, DollarSign, Calendar, MapPin, Heart, Shield } from 'lucide-react';
-import heroImage from '@/assets/asian.jpg';
+import heroImage from '@/assets/consortium-tour-group.jpg';
+import featureImage from '@/assets/consortium-tour-feature.jpg';
 
 const ConsortiumTours = () => {
   return (
@@ -126,9 +127,30 @@ const ConsortiumTours = () => {
         </div>
       </section>
 
-      {/* Package Highlights */}
+      {/* Image Showcase */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+              <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Bersama Lebih Seru
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Bergabung dengan consortium tour berarti Anda akan bertemu dengan traveler lain yang memiliki minat yang sama. Berbagi pengalaman, cerita, dan momen indah bersama membuat perjalanan menjadi lebih berkesan.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Dengan harga yang lebih terjangkau dan jadwal keberangkatan yang teratur, consortium tour adalah pilihan ideal untuk Anda yang ingin menjelajahi dunia tanpa ribet.
+              </p>
+            </div>
+            <div>
+              <img 
+                src={featureImage} 
+                alt="Consortium Tour Experience" 
+                className="rounded-2xl shadow-elegant w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Paket Tour Tersedia
