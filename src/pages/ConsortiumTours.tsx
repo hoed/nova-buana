@@ -3,41 +3,79 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Analytics } from "@vercel/analytics/react";
 import { Users, DollarSign, Calendar, MapPin, Heart, Shield } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import heroImage from '@/assets/consortium-tour-group.jpg';
 import featureImage from '@/assets/consortium-tour-feature.jpg';
 
 const ConsortiumTours = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Consortium Group Tours",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Nova Buana Wisata",
+      "url": "https://novabuana.com"
+    },
+    "areaServed": "Worldwide",
+    "description": "Paket tour berkelompok dengan harga terjangkau, jadwal teratur, dan tour leader berpengalaman"
+  };
+
   return (
+    <>
+      <Helmet>
+        <title>Consortium Tours - Paket Wisata Grup Hemat | Nova Buana Wisata</title>
+        <meta name="title" content="Consortium Tours - Paket Wisata Grup Hemat | Nova Buana Wisata" />
+        <meta name="description" content="Paket consortium tour hemat dengan jadwal keberangkatan teratur. Halal tour Eropa, Holy Land, Jepang, Korea, dan destinasi populer lainnya. Cocok untuk solo traveler!" />
+        <meta name="keywords" content="consortium tour, tour group, paket wisata murah, halal tour, holy land tour, tour korea, tour jepang, solo traveler, grup wisata" />
+        <link rel="canonical" href="https://novabuana.com/consortium-tours" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://novabuana.com/consortium-tours" />
+        <meta property="og:title" content="Consortium Tours - Paket Wisata Grup Hemat" />
+        <meta property="og:description" content="Paket tour berkelompok hemat dengan jadwal teratur dan tour leader berpengalaman." />
+        <meta property="og:image" content={heroImage} />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      
+    
     <div className="min-h-screen bg-background">
       <ResortNavigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-background" />
-        
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-12 h-px bg-primary"></div>
-            <span className="text-sm uppercase tracking-wider text-white/80 font-medium">
-              Group Travel
-            </span>
-            <div className="w-12 h-px bg-primary"></div>
-          </div>
+      <header>
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${heroImage})`,
+            }}
+            role="img"
+            aria-label="Consortium group tour travel experience"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-background" />
           
-          <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            Consortium Tours
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Bergabung dengan grup wisatawan lain untuk pengalaman yang menyenangkan dan hemat
-          </p>
-        </div>
-      </section>
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="w-12 h-px bg-primary"></div>
+              <span className="text-sm uppercase tracking-wider text-white/80 font-medium">
+                Wisata Berkelompok
+              </span>
+              <div className="w-12 h-px bg-primary"></div>
+            </div>
+            
+            <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+              Consortium Tours
+            </h1>
+            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              Bergabung dengan grup wisatawan lain untuk pengalaman seru dan hemat
+            </p>
+          </div>
+        </section>
+      </header>
 
       {/* Features Section */}
       <section className="py-20 lg:py-32">
@@ -145,8 +183,11 @@ const ConsortiumTours = () => {
             <div>
               <img 
                 src={featureImage} 
-                alt="Consortium Tour Experience" 
+                alt="Pengalaman consortium tour berkelompok dengan harga hemat dan tour leader profesional" 
                 className="rounded-2xl shadow-elegant w-full h-auto object-cover"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </div>
           </div>
@@ -244,6 +285,7 @@ const ConsortiumTours = () => {
 
       <Analytics />
     </div>
+    </>
   );
 };
 

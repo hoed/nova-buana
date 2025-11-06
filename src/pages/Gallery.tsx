@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { X, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { Analytics } from "@vercel/analytics/react";
+import { Helmet } from 'react-helmet';
 import pic1 from '@/assets/6249018721389627511.jpg';
 import pic2 from '@/assets/6249018721389627512.jpg';
 import pic3 from '@/assets/6249018721389627513.jpg';
@@ -158,31 +159,61 @@ const Gallery = () => {
     }
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Nova Buana Wisata Travel Gallery",
+    "description": "Koleksi foto perjalanan dari berbagai destinasi wisata di seluruh dunia",
+    "url": "https://novabuana.com/gallery"
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <ResortNavigation />
+    <>
+      <Helmet>
+        <title>Galeri Foto Perjalanan - Nova Buana Wisata | Destinasi Wisata Dunia</title>
+        <meta name="title" content="Galeri Foto Perjalanan - Nova Buana Wisata" />
+        <meta name="description" content="Jelajahi koleksi foto perjalanan Nova Buana Wisata dari berbagai destinasi eksotis: Asia, Eropa, Timur Tengah, dan destinasi menarik lainnya. Inspirasi perjalanan Anda dimulai di sini." />
+        <meta name="keywords" content="galeri wisata, foto perjalanan, destinasi wisata, travel photography, wisata asia, wisata eropa, inspirasi liburan" />
+        <link rel="canonical" href="https://novabuana.com/gallery" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://novabuana.com/gallery" />
+        <meta property="og:title" content="Galeri Foto Perjalanan - Nova Buana Wisata" />
+        <meta property="og:description" content="Koleksi foto perjalanan dari berbagai destinasi wisata di seluruh dunia." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
+        <ResortNavigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${pic1})`,
-            filter: 'blur(8px)',
-            transform: 'scale(1.1)',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-background" />
-        
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            Photo Gallery
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Explore our collection of stunning travel photography from around the world
-          </p>
-        </div>
-      </section>
+      <header>
+        <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${pic1})`,
+              filter: 'blur(8px)',
+              transform: 'scale(1.1)',
+            }}
+            role="img"
+            aria-label="Travel destination gallery hero background"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-background" />
+          
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+              Galeri Foto Perjalanan
+            </h1>
+            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              Jelajahi koleksi foto perjalanan menakjubkan dari berbagai destinasi di seluruh dunia
+            </p>
+          </div>
+        </section>
+      </header>
 
       {/* Filter Section */}
       <section className="py-8 border-b border-border bg-muted/30">
@@ -215,8 +246,11 @@ const Gallery = () => {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={image.src}
-                    alt={image.title}
+                    alt={`${image.title} - ${image.description} travel photography`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    width="600"
+                    height="450"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
@@ -343,7 +377,8 @@ const Gallery = () => {
       </footer>
 
       <Analytics />
-    </div>
+      </div>
+    </>
   );
 };
 

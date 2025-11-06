@@ -2,6 +2,7 @@ import { ResortNavigation } from '@/components/ResortNavigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MapPin, Calendar, Users, Star } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import asianTour from '@/assets/asian.png';
 import europeTour from '@/assets/europe.png';
 import { Analytics } from "@vercel/analytics/react";
@@ -88,31 +89,67 @@ const OutboundTour = () => {
     }
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "TourPackage",
+    "name": "Outbound Tours Nova Buana Wisata",
+    "description": "Paket tour internasional ke Asia, Eropa, dan destinasi menarik lainnya dengan guide profesional dan layanan premium",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Nova Buana Wisata",
+      "url": "https://novabuana.com"
+    }
+  };
+
   return (
+    <>
+      <Helmet>
+        <title>Outbound Tour - Paket Wisata Luar Negeri Terbaik | Nova Buana Wisata</title>
+        <meta name="title" content="Outbound Tour - Paket Wisata Luar Negeri Terbaik" />
+        <meta name="description" content="Paket outbound tour ke Asia, Eropa, dan destinasi internasional menarik. Tour Thailand, Vietnam, Singapore, Paris, Roma, Swiss Alps dengan guide profesional. Harga mulai $2,499." />
+        <meta name="keywords" content="outbound tour, tour luar negeri, paket wisata asia, paket wisata eropa, tour singapore, tour thailand, tour eropa, paket tour internasional" />
+        <link rel="canonical" href="https://novabuana.com/outbound-tour" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://novabuana.com/outbound-tour" />
+        <meta property="og:title" content="Outbound Tour - Paket Wisata Luar Negeri" />
+        <meta property="og:description" content="Paket tour internasional ke destinasi menarik dengan guide profesional dan layanan premium." />
+        <meta property="og:image" content={asianTour} />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      
+    
     <div className="min-h-screen bg-background">
       <ResortNavigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${asianTour})`,
-            filter: 'blur(4px)',
-            transform: 'scale(1.1)',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/60 to-background" />
-        
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            Outbound Tours
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Explore the world's most captivating destinations with our curated international travel experiences
-          </p>
-        </div>
-      </section>
+      <header>
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${asianTour})`,
+              filter: 'blur(4px)',
+              transform: 'scale(1.1)',
+            }}
+            role="img"
+            aria-label="International outbound tour destinations"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/60 to-background" />
+          
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+              Outbound Tours
+            </h1>
+            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              Jelajahi destinasi wisata internasional terbaik dengan paket tour yang dirancang khusus untuk pengalaman tak terlupakan
+            </p>
+          </div>
+        </section>
+      </header>
 
       {/* Tour Packages */}
       <section id="packages" className="py-20">
@@ -132,8 +169,11 @@ const OutboundTour = () => {
                 <div className="relative h-80 overflow-hidden">
                   <img
                     src={tour.image}
-                    alt={tour.destination}
+                    alt={`${tour.destination} - ${tour.country} tour package`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    width="800"
+                    height="600"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   
@@ -300,6 +340,7 @@ const OutboundTour = () => {
 
       <Analytics />
     </div>
+    </>
   );
 };
 

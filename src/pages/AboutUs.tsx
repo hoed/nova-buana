@@ -1,30 +1,69 @@
 import { ResortNavigation } from '@/components/ResortNavigation';
 import { Building2, Users, Award, Globe } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "TravelAgency",
+      "name": "Nova Buana Wisata",
+      "description": "Agensi wisata mewah yang menghadirkan pengalaman perjalanan eksklusif dan holistik",
+      "url": "https://novabuana.com/about"
+    }
+  };
+
   return (
+    <>
+      <Helmet>
+        <title>Tentang Kami - Nova Buana Wisata | Agen Wisata Mewah Terpercaya</title>
+        <meta name="title" content="Tentang Kami - Nova Buana Wisata | Agen Wisata Mewah Terpercaya" />
+        <meta name="description" content="Nova Buana Wisata adalah agensi wisata mewah yang menghadirkan pengalaman perjalanan eksklusif. Komitmen terhadap kualitas, layanan personal, dan destinasi pilihan terbaik." />
+        <meta name="keywords" content="tentang nova buana wisata, agen wisata mewah, travel agent terpercaya, luxury travel indonesia, agensi wisata profesional" />
+        <link rel="canonical" href="https://novabuana.com/about" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://novabuana.com/about" />
+        <meta property="og:title" content="Tentang Kami - Nova Buana Wisata" />
+        <meta property="og:description" content="Agensi wisata mewah dengan pengalaman perjalanan eksklusif dan layanan berkelas dunia." />
+        
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:url" content="https://novabuana.com/about" />
+        <meta property="twitter:title" content="Tentang Kami - Nova Buana Wisata" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      
+    
     <div className="min-h-screen">
       <ResortNavigation />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/6249018721389627506.jpg')`,
-          }}
-        />
-        <div className="absolute inset-0 hero-gradient" />
-        
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-shadow-luxury">
-            About Nova Buana Wisata
-          </h1>
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto text-shadow-soft">
-            Your Gateway to Extraordinary Travel Experiences
-          </p>
-        </div>
-      </section>
+      <header>
+        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('/6249018721389627506.jpg')`,
+            }}
+            role="img"
+            aria-label="Nova Buana Wisata travel agency background"
+          />
+          <div className="absolute inset-0 hero-gradient" />
+          
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-shadow-luxury">
+              Tentang Nova Buana Wisata
+            </h1>
+            <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto text-shadow-soft">
+              Pengalaman Perjalanan Luar Biasa Bersama Kami
+            </p>
+          </div>
+        </section>
+      </header>
 
       {/* Main Content */}
       <main className="py-20 bg-background">
@@ -177,6 +216,7 @@ const AboutUs = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
