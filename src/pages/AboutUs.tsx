@@ -10,26 +10,26 @@ const AboutUs = () => {
       "@type": "TravelAgency",
       "name": "Nova Buana Wisata",
       "description": "Agensi wisata mewah yang menghadirkan pengalaman perjalanan eksklusif dan holistik",
-      "url": "https://novabuana.com/about"
+      "url": "https://novabuana.id/about"
     }
   };
 
   return (
     <>
       <Helmet>
-        <title>Tentang Kami - Nova Buana Wisata | Agen Wisata Mewah Terpercaya</title>
-        <meta name="title" content="Tentang Kami - Nova Buana Wisata | Agen Wisata Mewah Terpercaya" />
-        <meta name="description" content="Nova Buana Wisata adalah agensi wisata mewah yang menghadirkan pengalaman perjalanan eksklusif. Komitmen terhadap kualitas, layanan personal, dan destinasi pilihan terbaik." />
-        <meta name="keywords" content="tentang nova buana wisata, agen wisata mewah, travel agent terpercaya, luxury travel indonesia, agensi wisata profesional" />
-        <link rel="canonical" href="https://novabuana.com/about" />
+        <title>Tentang Kami - Nova Buana Wisata | Agen Wisata Murah Terpercaya</title>
+        <meta name="title" content="Tentang Kami - Nova Buana Wisata | Agen Wisata Murah Terpercaya" />
+        <meta name="description" content="Nova Buana Wisata adalah agensi wisata murah yang menghadirkan pengalaman perjalanan eksklusif. Komitmen terhadap kualitas, layanan personal, dan destinasi pilihan terbaik." />
+        <meta name="keywords" content="tentang nova buana wisata, agen wisata murah, travel agent terpercaya, layanan travel indonesia, agensi wisata profesional, agen wisata luar negeri, layanan pengurusan visa, layanan pengurusan dokumen perjalanan" />
+        <link rel="canonical" href="https://novabuana.id/about" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com/about" />
+        <meta property="og:url" content="https://novabuana.id/about" />
         <meta property="og:title" content="Tentang Kami - Nova Buana Wisata" />
         <meta property="og:description" content="Agensi wisata mewah dengan pengalaman perjalanan eksklusif dan layanan berkelas dunia." />
         
         <meta property="twitter:card" content="summary" />
-        <meta property="twitter:url" content="https://novabuana.com/about" />
+        <meta property="twitter:url" content="https://novabuana.id/about" />
         <meta property="twitter:title" content="Tentang Kami - Nova Buana Wisata" />
         
         <script type="application/ld+json">
