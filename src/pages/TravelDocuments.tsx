@@ -22,8 +22,8 @@ const TravelDocuments = () => {
     "provider": {
       "@type": "TravelAgency",
       "name": "Nova Buana Wisata",
-      "description": "Agensi wisata mewah yang menggabungkan perjalanan dan kenyamanan",
-      "url": "https://novabuana.com"
+      "description": "Agensi wisata murah yang menggabungkan perjalanan dan kenyamanan",
+      "url": "https://novabuana.id"
     },
     "areaServed": "ID",
     "hasOfferCatalog": {
@@ -35,7 +35,7 @@ const TravelDocuments = () => {
           "itemOffered": {
             "@type": "Service",
             "name": "Visa Processing",
-            "description": "Pengurusan visa turis, bisnis, dan jenis visa lainnya untuk berbagai negara"
+            "description": "Pengurusan visa turis, bisnis, pendidikan dan jenis visa lainnya untuk berbagai negara"
           }
         },
         {
@@ -66,18 +66,18 @@ const TravelDocuments = () => {
         <meta name="title" content="Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata" />
         <meta name="description" content="Layanan pengurusan visa, paspor, dan dokumen perjalanan terpercaya. Proses mudah, cepat & profesional untuk Schengen, USA, UK, Australia, dan negara lainnya. Konsultasi gratis!" />
         <meta name="keywords" content="jasa visa, pengurusan visa, visa schengen, visa amerika, visa australia, jasa paspor, legalisasi dokumen, travel documents, visa processing indonesia" />
-        <link rel="canonical" href="https://novabuana.com/travel-documents" />
+        <link rel="canonical" href="https://novabuana.id/travel-documents" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com/travel-documents" />
+        <meta property="og:url" content="https://novabuana.id/travel-documents" />
         <meta property="og:title" content="Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata" />
         <meta property="og:description" content="Layanan pengurusan visa, paspor, dan dokumen perjalanan terpercaya. Proses mudah, cepat & profesional untuk berbagai negara. Konsultasi gratis!" />
         <meta property="og:image" content={heroImage} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://novabuana.com/travel-documents" />
+        <meta property="twitter:url" content="https://novabuana.id/travel-documents" />
         <meta property="twitter:title" content="Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata" />
         <meta property="twitter:description" content="Layanan pengurusan visa, paspor, dan dokumen perjalanan terpercaya. Proses mudah, cepat & profesional." />
         <meta property="twitter:image" content={heroImage} />
