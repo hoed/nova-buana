@@ -3,41 +3,125 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Analytics } from "@vercel/analytics/react";
 import { FileText, Globe, CheckCircle, Clock, Shield, HeadphonesIcon } from 'lucide-react';
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import heroImage from '@/assets/travel-docs-hero.jpg';
 import visaImage from '@/assets/visa-processing.jpg';
 
 const TravelDocuments = () => {
+  useEffect(() => {
+    // Set page title
+    document.title = 'Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata';
+  }, []);
+
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Travel Document Processing",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "Nova Buana Wisata",
+      "description": "Agensi wisata mewah yang menggabungkan perjalanan dan kenyamanan",
+      "url": "https://novabuana.com"
+    },
+    "areaServed": "ID",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Travel Document Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Visa Processing",
+            "description": "Pengurusan visa turis, bisnis, dan jenis visa lainnya untuk berbagai negara"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Passport Services",
+            "description": "Bantuan pembuatan dan perpanjangan paspor"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Document Legalization",
+            "description": "Legalisasi dokumen di kedutaan untuk keperluan perjalanan atau studi"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata</title>
+        <meta name="title" content="Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata" />
+        <meta name="description" content="Layanan pengurusan visa, paspor, dan dokumen perjalanan terpercaya. Proses mudah, cepat & profesional untuk Schengen, USA, UK, Australia, dan negara lainnya. Konsultasi gratis!" />
+        <meta name="keywords" content="jasa visa, pengurusan visa, visa schengen, visa amerika, visa australia, jasa paspor, legalisasi dokumen, travel documents, visa processing indonesia" />
+        <link rel="canonical" href="https://novabuana.com/travel-documents" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://novabuana.com/travel-documents" />
+        <meta property="og:title" content="Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata" />
+        <meta property="og:description" content="Layanan pengurusan visa, paspor, dan dokumen perjalanan terpercaya. Proses mudah, cepat & profesional untuk berbagai negara. Konsultasi gratis!" />
+        <meta property="og:image" content={heroImage} />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://novabuana.com/travel-documents" />
+        <meta property="twitter:title" content="Layanan Dokumen Perjalanan - Visa & Paspor | Nova Buana Wisata" />
+        <meta property="twitter:description" content="Layanan pengurusan visa, paspor, dan dokumen perjalanan terpercaya. Proses mudah, cepat & profesional." />
+        <meta property="twitter:image" content={heroImage} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-background">
       <ResortNavigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-background" />
-        
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-12 h-px bg-primary"></div>
-            <span className="text-sm uppercase tracking-wider text-white/80 font-medium">
-              Document Services
-            </span>
-            <div className="w-12 h-px bg-primary"></div>
-          </div>
+      <header>
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${heroImage})`,
+            }}
+            role="img"
+            aria-label="Travel documents and passport processing hero image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-background" />
           
-          <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-            Travel Documents
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Layanan pengurusan visa, paspor, dan dokumen perjalanan lainnya yang mudah dan terpercaya
-          </p>
-        </div>
-      </section>
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <div className="w-12 h-px bg-primary"></div>
+              <span className="text-sm uppercase tracking-wider text-white/80 font-medium">
+                Layanan Dokumen Perjalanan
+              </span>
+              <div className="w-12 h-px bg-primary"></div>
+            </div>
+            
+            <h1 className="font-serif text-5xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+              Layanan Visa & Paspor Terpercaya
+            </h1>
+            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+              Pengurusan visa, paspor, dan dokumen perjalanan mudah, cepat, dan profesional untuk berbagai negara tujuan
+            </p>
+          </div>
+        </section>
+      </header>
 
       {/* Services Overview */}
       <section className="py-20 lg:py-32">
@@ -134,8 +218,11 @@ const TravelDocuments = () => {
             <div className="order-2 md:order-1">
               <img 
                 src={visaImage} 
-                alt="Visa Processing Services" 
+                alt="Layanan pengurusan visa profesional Nova Buana Wisata dengan proses mudah dan terpercaya" 
                 className="rounded-2xl shadow-elegant w-full h-auto object-cover"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </div>
             <div className="order-1 md:order-2">
@@ -305,7 +392,8 @@ const TravelDocuments = () => {
       </footer>
 
       <Analytics />
-    </div>
+      </div>
+    </>
   );
 };
 
