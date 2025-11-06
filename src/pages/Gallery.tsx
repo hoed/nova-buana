@@ -173,11 +173,11 @@ const Gallery = () => {
         <title>Galeri Foto Perjalanan - Nova Buana Wisata | Destinasi Wisata Dunia</title>
         <meta name="title" content="Galeri Foto Perjalanan - Nova Buana Wisata" />
         <meta name="description" content="Jelajahi koleksi foto perjalanan Nova Buana Wisata dari berbagai destinasi eksotis: Asia, Eropa, Timur Tengah, dan destinasi menarik lainnya. Inspirasi perjalanan Anda dimulai di sini." />
-        <meta name="keywords" content="galeri wisata, foto perjalanan, destinasi wisata, travel photography, wisata asia, wisata eropa, inspirasi liburan" />
-        <link rel="canonical" href="https://novabuana.com/gallery" />
+        <meta name="keywords" content="galeri foto wisata, foto perjalanan, destinasi wisata, travel photography, wisata asia, wisata eropa, inspirasi liburan" />
+        <link rel="canonical" href="https://novabuana.id/gallery" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com/gallery" />
+        <meta property="og:url" content="https://novabuana.id/gallery" />
         <meta property="og:title" content="Galeri Foto Perjalanan - Nova Buana Wisata" />
         <meta property="og:description" content="Koleksi foto perjalanan dari berbagai destinasi wisata di seluruh dunia." />
         
