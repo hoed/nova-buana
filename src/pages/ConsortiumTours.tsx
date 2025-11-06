@@ -27,13 +27,13 @@ const ConsortiumTours = () => {
         <title>Consortium Tours - Paket Wisata Grup Hemat | Nova Buana Wisata</title>
         <meta name="title" content="Consortium Tours - Paket Wisata Grup Hemat | Nova Buana Wisata" />
         <meta name="description" content="Paket consortium tour hemat dengan jadwal keberangkatan teratur. Halal tour Eropa, Holy Land, Jepang, Korea, dan destinasi populer lainnya. Cocok untuk solo traveler!" />
-        <meta name="keywords" content="consortium tour, tour group, paket wisata murah, halal tour, holy land tour, tour korea, tour jepang, solo traveler, grup wisata" />
-        <link rel="canonical" href="https://novabuana.com/consortium-tours" />
+        <meta name="keywords" content="consortium tour, tour group, paket wisata murah, halal tour, holy land tour, tour korea, tour jepang, solo traveler, grup wisata, layanan wisata luar negeri" />
+        <link rel="canonical" href="https://novabuana.id/consortium-tours" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com/consortium-tours" />
+        <meta property="og:url" content="https://novabuana.id/consortium-tours" />
         <meta property="og:title" content="Consortium Tours - Paket Wisata Grup Hemat" />
-        <meta property="og:description" content="Paket tour berkelompok hemat dengan jadwal teratur dan tour leader berpengalaman." />
+        <meta property="og:description" content="Paket tour kelompok hemat dengan jadwal teratur dan tour leader berpengalaman." />
         <meta property="og:image" content={heroImage} />
         
         <script type="application/ld+json">
