@@ -97,7 +97,7 @@ const OutboundTour = () => {
     "provider": {
       "@type": "TravelAgency",
       "name": "Nova Buana Wisata",
-      "url": "https://novabuana.com"
+      "url": "https://novabuana.id"
     }
   };
 
@@ -108,10 +108,10 @@ const OutboundTour = () => {
         <meta name="title" content="Outbound Tour - Paket Wisata Luar Negeri Terbaik" />
         <meta name="description" content="Paket outbound tour ke Asia, Eropa, dan destinasi internasional menarik. Tour Thailand, Vietnam, Singapore, Paris, Roma, Swiss Alps dengan guide profesional. Harga mulai $2,499." />
         <meta name="keywords" content="outbound tour, tour luar negeri, paket wisata asia, paket wisata eropa, tour singapore, tour thailand, tour eropa, paket tour internasional" />
-        <link rel="canonical" href="https://novabuana.com/outbound-tour" />
+        <link rel="canonical" href="https://novabuana.id/outbound-tour" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com/outbound-tour" />
+        <meta property="og:url" content="https://novabuana.id/outbound-tour" />
         <meta property="og:title" content="Outbound Tour - Paket Wisata Luar Negeri" />
         <meta property="og:description" content="Paket tour internasional ke destinasi menarik dengan guide profesional dan layanan premium." />
         <meta property="og:image" content={asianTour} />
