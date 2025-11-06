@@ -15,7 +15,7 @@ const PrivateTour = () => {
     "provider": {
       "@type": "TravelAgency",
       "name": "Nova Buana Wisata",
-      "url": "https://novabuana.com"
+      "url": "https://novabuana.id"
     },
     "areaServed": "Worldwide",
     "description": "Paket tour pribadi eksklusif dengan itinerary yang dapat disesuaikan, guide profesional, dan layanan premium"
@@ -28,10 +28,10 @@ const PrivateTour = () => {
         <meta name="title" content="Private Tour - Paket Wisata Pribadi Eksklusif | Nova Buana Wisata" />
         <meta name="description" content="Paket private tour eksklusif dengan itinerary fleksibel, guide profesional, dan layanan VIP. Jelajahi dunia dengan kecepatan Anda sendiri. Konsultasi gratis!" />
         <meta name="keywords" content="private tour, tour pribadi, paket wisata eksklusif, tour vip, custom itinerary, wisata keluarga, tour guide profesional" />
-        <link rel="canonical" href="https://novabuana.com/private-tour" />
+        <link rel="canonical" href="https://novabuana.id/private-tour" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com/private-tour" />
+        <meta property="og:url" content="https://novabuana.id/private-tour" />
         <meta property="og:title" content="Private Tour - Paket Wisata Pribadi Eksklusif" />
         <meta property="og:description" content="Paket private tour dengan itinerary fleksibel dan layanan VIP untuk pengalaman perjalanan yang personal." />
         <meta property="og:image" content={heroImage} />
