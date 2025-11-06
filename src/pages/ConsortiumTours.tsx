@@ -15,7 +15,7 @@ const ConsortiumTours = () => {
     "provider": {
       "@type": "TravelAgency",
       "name": "Nova Buana Wisata",
-      "url": "https://novabuana.com"
+      "url": "https://novabuana.id"
     },
     "areaServed": "Worldwide",
     "description": "Paket tour berkelompok dengan harga terjangkau, jadwal teratur, dan tour leader berpengalaman"
