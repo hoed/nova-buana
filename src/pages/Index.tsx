@@ -20,8 +20,8 @@ const Index = () => {
     "@type": "TravelAgency",
     "name": "Nova Buana Wisata",
     "description": "Agensi wisata mewah yang menggabungkan perjalanan dan kenyamanan, menawarkan pengalaman eksklusif dan holistik",
-    "url": "https://novabuana.com",
-    "logo": "https://novabuana.com/logo.png",
+    "url": "https://novabuana.id",
+    "logo": "https://novabuana.id/logo.png",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "ID"
@@ -35,20 +35,20 @@ const Index = () => {
     <>
       <Helmet>
         <title>Nova Buana Wisata - Agen Wisata Mewah & Tour Internasional Terpercaya</title>
-        <meta name="title" content="Nova Buana Wisata - Agen Wisata Mewah & Tour Internasional Terpercaya" />
-        <meta name="description" content="Nova Buana Wisata - Agensi wisata mewah terpercaya untuk private tour, consortium tour, paket wisata luar negeri, dan pengurusan visa. Pengalaman perjalanan eksklusif dan berkelas dunia." />
+        <meta name="title" content="Nova Buana Wisata - Agen Wisata Murah & Tour Internasional Terpercaya" />
+        <meta name="description" content="Nova Buana Wisata - Agensi wisata murah terpercaya untuk private tour, consortium tour, paket wisata luar negeri, dan pengurusan visa. Pengalaman perjalanan eksklusif dan berkelas dunia." />
         <meta name="keywords" content="agen wisata, travel agent indonesia, tour luar negeri, private tour, consortium tour, paket wisata eropa, paket wisata asia, pengurusan visa, luxury travel, outbound tour" />
-        <link rel="canonical" href="https://novabuana.com" />
+        <link rel="canonical" href="https://novabuana.id" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://novabuana.com" />
-        <meta property="og:title" content="Nova Buana Wisata - Agen Wisata Mewah & Tour Internasional" />
-        <meta property="og:description" content="Agensi wisata mewah terpercaya untuk private tour, consortium tour, dan paket wisata luar negeri. Pengalaman perjalanan eksklusif." />
+        <meta property="og:url" content="https://novabuana.id" />
+        <meta property="og:title" content="Nova Buana Wisata - Agen Wisata murah & Tour Internasional" />
+        <meta property="og:description" content="Agensi wisata murah terpercaya untuk private tour, consortium tour, dan paket wisata luar negeri. Pengalaman perjalanan eksklusif." />
         
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://novabuana.com" />
-        <meta property="twitter:title" content="Nova Buana Wisata - Agen Wisata Mewah" />
-        <meta property="twitter:description" content="Agensi wisata mewah terpercaya untuk private tour dan paket wisata luar negeri." />
+        <meta property="twitter:url" content="https://novabuana.id" />
+        <meta property="twitter:title" content="Nova Buana Wisata - Agen Wisata Murah" />
+        <meta property="twitter:description" content="Agensi wisata murah terpercaya untuk private tour dan paket wisata luar negeri." />
         
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
