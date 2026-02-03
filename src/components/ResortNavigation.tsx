@@ -62,7 +62,7 @@ export const ResortNavigation = () => {
 
   const tourSubmenu = [
     { name: 'Outbound Tour', path: '/outbound-tour' },
-    { name: 'Inbound Tours', path: 'https://beyourtour.xyz', external: true },
+    { name: 'Inbound Tours', path: 'https://beyourtour.vercel.app', external: true },
   ];
 
   return (
