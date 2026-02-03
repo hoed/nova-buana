@@ -1,4 +1,5 @@
 import { ResortNavigation } from '@/components/ResortNavigation';
+import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { MapPin, Calendar, Users, Star } from 'lucide-react';
@@ -304,39 +305,7 @@ const OutboundTour = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative bg-charcoal text-white py-20 overflow-hidden">
-        {/* Background Image with Blur */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/6249018721389627506.jpg')`,
-            filter: 'blur(8px)',
-            transform: 'scale(1.1)',
-          }}
-        />
-        
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-charcoal/90" />
-        
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 max-w-2xl mx-auto">
-            <h3 className="font-serif text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-              Nova Buana Wisata
-            </h3>
-            <p className="text-white/90 text-lg md:text-xl leading-relaxed font-light drop-shadow-md">
-              Novabuana — agensi wisata mewah yang menggabungkan perjalanan dan kenyamanan, 
-              menawarkan pengalaman eksklusif dan holistik.
-            </p>
-            <div className="pt-6 border-t border-white/20">
-              <p className="text-white/60 text-sm mt-2">
-                &copy; 2025 Nova Buana Wisata. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <Analytics />
     </div>
